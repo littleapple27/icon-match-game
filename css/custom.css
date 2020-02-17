@@ -274,3 +274,13 @@ p {
     font-size: 18px !important;
   }
 }
+
+.card-start {
+  color: #39CCCC;
+  background-color: #39CCCC;
+}
+
+.card-end {
+  color: #39CCCC;
+  background-color: #f2f2f2;
+}
