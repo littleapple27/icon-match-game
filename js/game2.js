@@ -43,27 +43,16 @@
 		/* Add the cards to the webpage */
 		for(i=0;i<value;i++){
 			/* Create the image elements*/
-			card1='<div class="col-3 mb-2"><div class="p-2 border card-start" data-card=""><i class="fas ' + deck1[i]+'" style="font-size: 1.5rem;"/></i></div></div>';
-			card2='<div class="col-sm-6 col-xs-4 mb-2"><div class="border py-1 w-100 card-start" style="font-size: .85rem;">' +deck2[i] +'</div></div>';
+			card1='<div class="col-3 mb-2"><div class="p-2 border" data-card=""><img class="card" data-card="' +deck1[i] +'" src="img/card-back-teal.png" style="width:100%" /></div></div>';
+			card2='<div class="col-3 mb-2 "><div class="border py-1 w-100" style="font-size: .85rem;"><img class="card" data-card="' +deck2[i] +'" src="img/card-back-teal.png" style="width:100%" /></div></div>';
 			/*Add images to the 2 decks */
 			deck1div.innerHTML+=card1;
 			deck2div.innerHTML+=card2;
 		}
-		
-		/* Flip the cards after 500 milliseconds */
-			setTimeout(function(){
-				/* Flip the card that haven't been matched */
-				$('.card-start').toggleClass("card-end");
-			},250);
-		
 	}
 	
 	/* Clears all the elements when a new game is started */
 	function initializeBoard(){
-		setTimeout(function(){
-				/* Flip the card that haven't been matched */
-				$('.card-end').toggleClass("card-start");
-			},3000);
 		/* Clear the content of the divs that hold the 2 decks */
 		deck1div.innerHTML='';
 		deck2div.innerHTML='';
@@ -88,7 +77,7 @@
 		console.log("deck1flipped - "+deck1flipped);
 		console.log("deck2flipped - "+deck2flipped);
 		/*Flip all the cards */
-		flipUnmatchedCards('deck1','red_back');
+		flipUnmatchedCards('deck1','card-back-teal');
 		/* Flip the selected card */
 		event.target.src='img/'+event.target.getAttribute('data-card')+'.png';
 		if(deck2flipped.length>0){
@@ -108,7 +97,7 @@
 		console.log("deck1flipped - "+deck1flipped);
 		console.log("deck2flipped - "+deck2flipped);
 		/*Flip all the cards */
-		flipUnmatchedCards('deck2','yellow_back');
+		flipUnmatchedCards('deck2','card-back-teal');
 		/* Flip the selected card */
 		event.target.src='img/'+event.target.getAttribute('data-card')+'.png';
 		if(deck1flipped.length>0){
@@ -134,8 +123,8 @@
 			/* Flip the cards after 1500 milliseconds */
 			setTimeout(function(){
 				/* Flip the card that haven't been matched */
-				flipUnmatchedCards('deck1',back='red_back');
-				flipUnmatchedCards('deck2',back='yellow_back');
+				flipUnmatchedCards('deck1',back='card-back-teal');
+				flipUnmatchedCards('deck2',back='card-back-teal');
 			},1000);
 		}
 	}
