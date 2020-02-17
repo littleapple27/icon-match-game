@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="cleartype" content="on">
+	<meta name="apple-mobile-web-app-title" content="The Unambiguous Icon Project: A Case for Universal Icon Meanings">
+	<meta name="robots" content="NOYDIR,NOODP" />
+	<meta name="description" content="The Unambiguous Icon Project: A Case for Universal Icon Meanings" />
+	<meta name="keywords" content="icon ambiguity, UI icons, font awesome, icon research" />
+	<meta property="og:site_name" content="The Unambiguous Icon Project: A Case for Universal Icon Meanings" />
+	<meta property="og:title" content="The Unambiguous Icon Project: A Case for Universal Icon Meanings" />
+	<meta property="og:description" content="An experiment at Fort Hays State University" />
+	<script src="https://kit.fontawesome.com/bf44c917aa.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto:900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/tabs-wizard.css">
+	<link rel="stylesheet" href="css/custom.min.css">
+	<title>The Unambiguous Icon Project: A Case for Universal Icon Meanings</title>
+
+</head>
+
+<body>
+
+	<main class="container-fluid" id="">
+		<h2>Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h2>
+		<p>Cick on an icon to highlight it, then click on the word that best matches what is depicted in the icon.</p>
+
+		<div class="row">
+			<div class="col-12 text-left">
+				<button class="btn btn-primary" onclick="startGame()">Start game</button>
+
+			</div>
+		</div>
+
+		<!-- MultiStep Form -->
+
+		<form id="msform" method="post" action="">
+
+			<fieldset class="fieldset">
+
+				<div class="row">
+					<!---Outer Row--->
+
+
+					<div class="col-sm-6 mb-1 bg-teal">
+						<!---Outer Column--->
+						<h3 class="col-12 pt-2">Icon Bank</h3>
+						<div class="row py-2 align-items-center" id="deck1"></div>
+					</div>
+
+
+					<div class="col-sm-6 mb-1 bg-light">
+						<!---Outer Column--->
+						<h3 class="col-12 pt-2">Word Bank</h3>
+						<div class="row py-2 align-items-center" id="deck2"></div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-12 text-left">
+						<button class="btn btn-teal btn-md btn-toggle">Submit Answers&nbsp;&nbsp;<i
+								class="fas fa-angle-double-right"></i></button>
+					</div>
+				</div>
+			</fieldset>
+
+		</form>
+
+
+		<!-- progressbar -->
+		<ul class="d-flex flex-row justify-content-center" id="progressbar">
+			<li class="active dot" id="dot"></li>
+			<li class="dot"></li>
+			<li class="dot"></li>
+		</ul> <!-- fieldsets -->
+
+
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+	</script>
+	<script src="js/shuffle.js"></script>
+	<script src="js/game.js"></script>
+
+
+
+</body>
+
+</html>
