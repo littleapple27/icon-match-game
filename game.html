@@ -24,24 +24,25 @@
 
 <body onload="loadGame()">
 
-	<main class="container-fluid" id="">
-		<h2>Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h2>
-		<p>Cick on an icon to highlight it, then click on the word that best matches what is depicted in the icon.</p>
+	<main class="container mt-2" id="">
+		<h5>Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h5>
+		<p><small>Cick on an icon to highlight it, then click on the word that best matches what is depicted in the icon.</small></p>
 
 		<div class="row">
 			<div class="col-12 text-left">
-				<button class="btn btn-primary" onclick="startGame();">Start game</button>
+				<button class="btn btn-primary" id="startBtn" onclick="startGame();">Start game</button>
 				<button class="btn btn-primary btn-toggle" onclick="">Submit Answers</button>
 			</div>
 		</div>
+		</main>
 
 		<!-- MultiStep Form -->
-
+<section class="container-fluid">
 		<form id="msform" method="post" action="">
 
 			<fieldset class="fieldset">
 
-				<div class="row">
+				<div class="row border">
 					<!---Outer Row--->
 
 
@@ -51,15 +52,9 @@
 						<div class="row py-2 align-items-center" id="deck1">
 						
 							<!-- REMOVE ONCE FINAL
-								<div class="col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body"><i class="fa fa-bullhorn fa-2x float-middle"></i></div></div></div></div> -->
+								<div class="col-lg-4 col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border"><i class="fas ' + deck1[i]+' fa-2x float-middle"></i></div></div></div></div> -->
 						
-						
-						
-						
-						
-						
-						
-						
+
 						</div><!---Inner Deck Row--->
 					</div><!---Outer Column--->
 
@@ -70,7 +65,7 @@
 						<div class="row py-2 align-items-center" id="deck2">
 
 									<!-- REMOVE ONCE FINAL
-								<div class="col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body"><i class="fa fa-bullhorn fa-2x float-middle"></i></div></div></div></div> -->
+								<div class="col-lg-4 col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border">' +deck2[i] +'</div></div></div></div> -->
 
 
 
@@ -92,7 +87,7 @@
 		</ul> <!-- fieldsets -->
 
 
-	</main>
+	</section>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">

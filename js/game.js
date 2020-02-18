@@ -43,12 +43,11 @@
 		/* Add the cards to the webpage */
 		for(i=0;i<value;i++){
 			/* Create the image elements*/
-			card1='<div class="col-lg-4 col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body"><i class="fas ' + deck1[i]+' fa-2x float-middle"></i></div></div></div></div>';
-			card2='<div class="col-lg-4 col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body">' +deck2[i] +'</div></div></div></div>';
+			card1='<div class="col-lg-4 col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body py-3 px-0"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border py-3 px-0"><i class="fas ' + deck1[i]+' fa-2x float-middle"></i></div></div></div></div>';
+			card2='<div class="col-lg-4 col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body py-1 px-0"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border py-1 px-0">' +deck2[i] +'</div></div></div></div>';
 			/*Add images to the 2 decks */
 			deck1div.innerHTML+=card1;
 			deck2div.innerHTML+=card2;
-
 		}
 	}
 	
@@ -69,8 +68,9 @@
 
 	/* When the user clicks on start game the cards flip over and the timer starts?? */
 	function startGame(){
-  		$('.card-front').toggleClass('card-front-flip');
-		$('.card-back').toggleClass('card-back-flip');
+  		$('.card-front').addClass('card-front-flip').removeClass('.card-front');
+		$('.card-back').addClass('card-back-flip').removeClass('.card-back');
+		//$('#startBtn').html("Start Over");
 	};
 
 	

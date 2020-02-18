@@ -40,4 +40,9 @@ flip card
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
 }
+
+.card {
+  width: 100%;
+  height: 100%;
+}
 /*# sourceMappingURL=cardflip.css.map */
