@@ -14,15 +14,15 @@
 	<meta property="og:description" content="An experiment at Fort Hays State University" />
 	<script src="https://kit.fontawesome.com/bf44c917aa.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto:900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/tabs-wizard.css">
 	<link rel="stylesheet" href="css/custom.min.css">
+	<link rel="stylesheet" href="css/cardflip.min.css">
 	<title>The Unambiguous Icon Project: A Case for Universal Icon Meanings</title>
 
 </head>
 
-<body>
+<body onload="loadGame()">
 
 	<main class="container-fluid" id="">
 		<h2>Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h2>
@@ -30,8 +30,8 @@
 
 		<div class="row">
 			<div class="col-12 text-left">
-				<button class="btn btn-primary" onclick="startGame()">Start game</button>
-				<button class="btn btn-primary" onclick="">Submit Answers</button>
+				<button class="btn btn-primary" onclick="startGame();">Start game</button>
+				<button class="btn btn-primary btn-toggle" onclick="">Submit Answers</button>
 			</div>
 		</div>
 
@@ -45,27 +45,40 @@
 					<!---Outer Row--->
 
 
-					<div class="col-sm-6 mb-1">
+					<div class="col-6 mb-1 bg-lt-white">
 						<!---Outer Column--->
 						<h3 class="col-12 pt-2">Icon Bank</h3>
-						<div class="row py-2 align-items-center" id="deck1"></div>
-					</div>
+						<div class="row py-2 align-items-center" id="deck1">
+						
+							<!-- REMOVE ONCE FINAL
+								<div class="col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body"><i class="fa fa-bullhorn fa-2x float-middle"></i></div></div></div></div> -->
+						
+						
+						
+						
+						
+						
+						
+						
+						</div><!---Inner Deck Row--->
+					</div><!---Outer Column--->
 
 
-					<div class="col-sm-6 mb-1 bg-light">
+					<div class="col-6 mb-1 bg-lt-white">
 						<!---Outer Column--->
 						<h3 class="col-12 pt-2">Word Bank</h3>
-						<div class="row py-2 align-items-center" id="deck2"></div>
+						<div class="row py-2 align-items-center" id="deck2">
+
+									<!-- REMOVE ONCE FINAL
+								<div class="col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body"><i class="fa fa-bullhorn fa-2x float-middle"></i></div></div></div></div> -->
+
+
+
+						</div>
 					</div>
 
 				</div>
 
-				<div class="row">
-					<div class="col-12 text-left">
-						<button class="btn btn-teal btn-md btn-toggle">Submit Answers&nbsp;&nbsp;<i
-								class="fas fa-angle-double-right"></i></button>
-					</div>
-				</div>
 			</fieldset>
 
 		</form>

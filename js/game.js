@@ -20,11 +20,11 @@
 	/*
 		Initialize a new game
 	*/
-	function startGame(){
+	function loadGame(){
 		/* Get the difficulty of the game */
 		//var element=document.getElementById('difficulty');  REMOVE
 		//var value=element.options[element.selectedIndex].value; REMOVE
-		console.log(value);
+		//console.log(value);
 		/* Set value to 20 cards */
 		var value = 20; 
 		/* Initialize the board*/
@@ -43,27 +43,17 @@
 		/* Add the cards to the webpage */
 		for(i=0;i<value;i++){
 			/* Create the image elements*/
-			card1='<div class="col-3 mb-2"><div class="p-2 border card-start" data-card=""><i class="fas ' + deck1[i]+'" style="font-size: 1.5rem;"/></i></div></div>';
-			card2='<div class="col-sm-6 col-xs-4 mb-2"><div class="border py-1 w-100 card-start" style="font-size: .85rem;">' +deck2[i] +'</div></div>';
+			card1='<div class="col-lg-4 col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body"><i class="fas ' + deck1[i]+' fa-2x float-middle"></i></div></div></div></div>';
+			card2='<div class="col-lg-4 col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body">' +deck2[i] +'</div></div></div></div>';
 			/*Add images to the 2 decks */
 			deck1div.innerHTML+=card1;
 			deck2div.innerHTML+=card2;
+
 		}
-		
-		/* Flip the cards after 500 milliseconds */
-			setTimeout(function(){
-				/* Flip the card that haven't been matched */
-				$('.card-start').toggleClass("card-end");
-			},250);
-		
 	}
 	
 	/* Clears all the elements when a new game is started */
 	function initializeBoard(){
-		setTimeout(function(){
-				/* Flip the card that haven't been matched */
-				$('.card-end').toggleClass("card-start");
-			},3000);
 		/* Clear the content of the divs that hold the 2 decks */
 		deck1div.innerHTML='';
 		deck2div.innerHTML='';
@@ -76,6 +66,13 @@
 		deck1flipped='';
 		deck2flipped='';
 	}
+
+	/* When the user clicks on start game the cards flip over and the timer starts?? */
+	function startGame(){
+  		$('.card-front').toggleClass('card-front-flip');
+		$('.card-back').toggleClass('card-back-flip');
+	};
+
 	
 	/* When the user clicks on deck1 */
 	deck1div.addEventListener('click',function(event){
@@ -162,3 +159,15 @@
 			if(!deckMatched.includes(currentCard)) cards[i].src='img/'+back+'.png';
 		}
 	}
+
+
+
+
+
+
+
+	/* Flip the cards after 500 milliseconds */
+			// setTimeout(function(){
+			// 	/* Flip the card that haven't been matched */
+			// 	$('.card-start').toggleClass("card-end");
+			// },250);
