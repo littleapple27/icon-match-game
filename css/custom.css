@@ -127,6 +127,10 @@ a:hover {
   text-decoration: underline;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 html,
 body {
   font-size: 14px !important;
@@ -205,7 +209,7 @@ p {
 
 .hr-style {
   border: 0.5px solid #39CCCC !important;
-  width: 85%;
+  width: 100%;
 }
 
 .jumbo-image {
@@ -225,10 +229,6 @@ p {
   font-family: "Raleway", sans-serif !important;
 }
 
-.p-m-svg {
-  padding: 2%;
-}
-
 #title-row {
   background-image: url("../img/globe-title.svg");
   /* The image used */
@@ -237,19 +237,6 @@ p {
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-position: left top;
-}
-
-.footer-2 {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-top: 12rem;
-}
-
-.progress {
-  height: 1.25rem;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .jumbotron-fluid {
@@ -287,6 +274,9 @@ p {
   .text-sm {
     font-size: 14px;
   }
+  .container-game {
+    padding: 0 2rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -301,8 +291,4 @@ p {
   body, p {
     font-size: 18px !important;
   }
-}
-
-.container-game {
-  padding: 0 3rem;
 }

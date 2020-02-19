@@ -1,4 +1,8 @@
 
+ 	$(document).ready(function(){
+        $("#myModal").modal('show');
+    }); 
+	
 	/* This is the array that contains the icon deck (32 icons) */
 	var deck=[
 	'fas fa-bolt','fas fa-bookmark','fa-bullhorn','fa-cloud-upload-alt','fa-compress','fa-concierge-bell','fa-credit-card','fa-directions','fa-donate','fa-exchange-alt','fa-expand','fa-external-link-alt','fa-eye','fa-grip-lines','fa-life-ring','fa-location-arrow','fa-lock','fa-moon','fa-street-view','fa-th','fa-address-book','fa-address-card','fa-archive','fa-award','fa-bus','fa-calendar-alt','fa-clipboard','fa-clone','fa-download','fa-laptop','fa-money-bill','fa-paste','fa-power-off', 'fa-trash-alt','fa-wifi', 'fa-video'];
@@ -43,8 +47,8 @@
 		/* Add the cards to the webpage */
 		for(i=0;i<value;i++){
 			/* Create the image elements*/
-			card1='<div class="col-md-4 col-6 p-2 mb-1"><div class="card card-flip"><div class="card-front text-white bg-purple"><div class="card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border p-0 d-flex align-items-center justify-content-center" id="back-icon-size"><i class="fas ' + deck1[i]+'  float-middle"></i></div></div></div></div>';
-			card2='<div class="col-md-4 col-6 p-2 mb-1"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border p-0 d-flex align-items-center justify-content-center" id="back-text-size">' +deck2[i] +'</div></div></div></div>';
+			card1='<div class="col-md-4 col-6 p-1 m-0"><div class="card card-flip"><div class="card-front text-white bg-purple"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body border p-0 d-flex align-items-center justify-content-center" id="back-icon-size"><i class="fas ' + deck1[i]+'  float-middle"></i></div></div></div></div>';
+			card2='<div class="col-md-4 col-6 p-1"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body border p-0 d-flex align-items-center justify-content-center" id="back-text-size">' +deck2[i] +'</div></div></div></div>';
 			/*Add images to the 2 decks */
 			deck1div.innerHTML+=card1;
 			deck2div.innerHTML+=card2;
@@ -138,6 +142,7 @@
 			},1000);
 		}
 	}
+
 	/* Checks if the user won the game */
 	function checkEndgame(){
 		setTimeout(function(){
@@ -162,8 +167,10 @@
 		}
 	}
 
-
-
+		/****** Exit Message ******/
+		$(window).bind('beforeunload', function(){
+			return 'Are you sure you want to leave?';
+		});
 
 
 
