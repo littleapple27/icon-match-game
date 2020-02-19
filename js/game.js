@@ -26,7 +26,7 @@
 		//var value=element.options[element.selectedIndex].value; REMOVE
 		//console.log(value);
 		/* Set value to 20 cards */
-		var value = 20; 
+		var value = 18; 
 		/* Initialize the board*/
 		initializeBoard();
 		/* Shuffle the deck with 52 cards */
@@ -43,8 +43,8 @@
 		/* Add the cards to the webpage */
 		for(i=0;i<value;i++){
 			/* Create the image elements*/
-			card1='<div class="col-lg-4 col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body py-3 px-0"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border py-3 px-0"><i class="fas ' + deck1[i]+' fa-2x float-middle"></i></div></div></div></div>';
-			card2='<div class="col-lg-4 col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body py-1 px-0"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border py-1 px-0">' +deck2[i] +'</div></div></div></div>';
+			card1='<div class="col-md-4 col-6 p-2 mb-1"><div class="card card-flip"><div class="card-front text-white bg-purple"><div class="card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border p-0 d-flex align-items-center justify-content-center" id="back-icon-size"><i class="fas ' + deck1[i]+'  float-middle"></i></div></div></div></div>';
+			card2='<div class="col-md-4 col-6 p-2 mb-1"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border p-0 d-flex align-items-center justify-content-center" id="back-text-size">' +deck2[i] +'</div></div></div></div>';
 			/*Add images to the 2 decks */
 			deck1div.innerHTML+=card1;
 			deck2div.innerHTML+=card2;
@@ -70,6 +70,8 @@
 	function startGame(){
   		$('.card-front').addClass('card-front-flip').removeClass('.card-front');
 		$('.card-back').addClass('card-back-flip').removeClass('.card-back');
+		$('#icon-bank').addClass('bg-purple').removeClass('.bg-lt-purple');
+		$('#word-bank').addClass('bg-teal').removeClass('.bg-lt-teal');
 		//$('#startBtn').html("Start Over");
 	};
 

@@ -24,6 +24,15 @@ $grey: #909095;
 	background-color: rgba(255, 255, 255, 0.1); 
 }
 
+.bg-lt-purple {
+	background-color: #af6ac6; 
+}
+
+.bg-lt-teal {
+	background-color:#76dcdc; 
+}
+
+
 .bg-black {
 	background-color: $black; 
 }
@@ -107,6 +116,31 @@ $grey: #909095;
 .show > .btn-outline-teal.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(57, 204, 204, 0.5);
 }
+
+.btn-orange {
+	font-family: 'Roboto', sans-serif!important;
+	background-color: $orange!important;
+	border: 0; 
+	color: $white; 
+}
+
+.btn-orange:hover {
+	font-family: 'Roboto', sans-serif!important;
+	background-color: rgba(251, 161, 0, 0.75)!important;
+	border: 0; 
+	color: $white!important; 
+}
+
+
+.outline-teal {
+  color: $teal;
+  font-family: 'Roboto', sans-serif;
+  border-color: $teal;
+}
+
+
+
+
 
 a:hover {
 	font-family: 'Raleway', sans-serif;
@@ -200,7 +234,7 @@ p {
 }
 
 .card-body {
-	font-family: 'Roboto', sans-serif!important;
+	font-family: 'Raleway', sans-serif!important;
 }
 
 .p-m-svg {
@@ -288,12 +322,6 @@ p {
 	}
 
 
-.card-start {
-	color: $teal;
-	background-color:$teal;
-}
-
-.card-end {
-	color: $teal; 
-	background-color: $white; 
+.container-game {
+	padding: 0 3rem;
 }

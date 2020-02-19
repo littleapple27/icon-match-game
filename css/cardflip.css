@@ -4,45 +4,55 @@ flip card
 .card-flip > div {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
   transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
+  transition-timing-function: linear;
   width: 100%;
   height: 100%;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  border-radius: 5px;
 }
 
 .card-front {
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 .card-back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
   position: absolute;
   top: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 .card-front-flip {
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
 .card-back-flip {
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 .card {
   width: 100%;
-  height: 100%;
+  height: 3.5rem;
+  border-radius: 5px;
 }
-/*# sourceMappingURL=cardflip.css.map */
+
+#back-text-size {
+  font-size: .85rem;
+}
+
+#back-icon-size {
+  font-size: 2rem;
+}
+
+.card-back > i {
+  font-size: .85rem;
+}
+
+.card-body {
+  border-radius: 5px;
+}

@@ -22,72 +22,78 @@
 
 </head>
 
-<body onload="loadGame()">
+<body class="bg-black" onload="loadGame()">
 
-	<main class="container mt-2" id="">
-		<h5>Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h5>
-		<p><small>Cick on an icon to highlight it, then click on the word that best matches what is depicted in the icon.</small></p>
+	<main class="container-fluid px-5 py-4 mb-0 text-white" id="">
+		<h3 class="text-teal">Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h3>
+		<ul class="">
+			<li>Click on an icon from the icon bank to highlight it.</li>
+			<li>Then, click on a word from the word bank that best represents the meaning or function of the icon.</li>
+		</ul>
+
+
+		<hr class="my-4 hr-style">
 
 		<div class="row">
-			<div class="col-12 text-left">
-				<button class="btn btn-primary" id="startBtn" onclick="startGame();">Start game</button>
-				<button class="btn btn-primary btn-toggle" onclick="">Submit Answers</button>
+			<div class="col-12 text-left d-flex">
+				<button class="btn btn-orange mr-2" id="startBtn" onclick="startGame();">Start game</button>
+				<span class="btn outline-teal text-white ml-auto">0:00</span>
 			</div>
 		</div>
 		</main>
 
 		<!-- MultiStep Form -->
-<section class="container-fluid">
-		<form id="msform" method="post" action="">
+<section class="container-game" id="">
+		<!-- <form id="msform" method="post" action=""> ***removed: ask NC question about form****
+			<fieldset class="fieldset px-2"> -->
 
-			<fieldset class="fieldset">
-
-				<div class="row border">
-					<!---Outer Row--->
-
-
-					<div class="col-6 mb-1 bg-lt-white">
+				<div class="row">
+					<!---Inner Row--->
+					<div class="col-6 mb-1 bg-lt-purple rounded-left" id="icon-bank">
 						<!---Outer Column--->
-						<h3 class="col-12 pt-2">Icon Bank</h3>
-						<div class="row py-2 align-items-center" id="deck1">
+						<h3 class="col-12 pt-2 text-white">Icon Bank</h3>
+						<div class="row" id="deck1">
 						
-							<!-- REMOVE ONCE FINAL
-								<div class="col-lg-4 col-sm-4 mb-2"><div class="card card-flip"><div class="card-front text-white bg-dark"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border"><i class="fas ' + deck1[i]+' fa-2x float-middle"></i></div></div></div></div> -->
+							<!-- This <div>  is in JS code -->
 						
 
 						</div><!---Inner Deck Row--->
-					</div><!---Outer Column--->
+					</div><!---Inner Column--->
 
-
-					<div class="col-6 mb-1 bg-lt-white">
+					<div class="col-6 mb-1 bg-lt-teal rounded-right" id="word-bank">
 						<!---Outer Column--->
-						<h3 class="col-12 pt-2">Word Bank</h3>
-						<div class="row py-2 align-items-center" id="deck2">
+						<h3 class="col-12 pt-2 text-white">Word Bank</h3>
+						<div class="row" id="deck2">
 
-									<!-- REMOVE ONCE FINAL
-								<div class="col-lg-4 col-sm-6 mb-2"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class="card-body"><i class="fa fa-question fa-2x float-middle"></i></div></div><div class="card-back bg-white"><div class="card-body border">' +deck2[i] +'</div></div></div></div> -->
-
-
-
+									<!-- This <div>  is in JS code -->
 						</div>
-					</div>
+				
+					</div>	<!---end of game wrapper--->
+				</div><!---end of outer row--->
 
-				</div>
+			
 
-			</fieldset>
+			<!-- </fieldset> ***removed: ask NC question about form****
+		</form> -->
 
-		</form>
 
-
-		<!-- progressbar -->
-		<ul class="d-flex flex-row justify-content-center" id="progressbar">
+		<!-- progressbar *** THIS WAS FORM FIELDSET PROGRESS BAR TO SHOW PROGRESS IN ORIGINAL GAME VERSION-->
+		<!-- <ul class="d-flex flex-row justify-content-center mb-0" id="progressbar">
 			<li class="active dot" id="dot"></li>
 			<li class="dot"></li>
 			<li class="dot"></li>
-		</ul> <!-- fieldsets -->
+		</ul>  --><!-- fieldsets -->
 
 
 	</section>
+
+		<footer class="container-fluid py-2 bg-black" id="">
+		<div class="row">
+			<div class="ml-auto col-md-8 d-flex flex-column justify-content-center px-2 mb-2">
+				<span class=" text-sm text-right text-grey m-0 ">
+					&copy; 2019 amlegleiter@mail.fhsu.edu</span>
+			</div>
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
