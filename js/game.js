@@ -47,7 +47,7 @@
 		/* Add the cards to the webpage */
 		for(i=0;i<value;i++){
 			/* Create the image elements*/
-			card1='<div class="col-md-4 col-6 p-1 m-0"><div class="card card-flip"><div class="card-front text-white bg-purple"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body border p-0 d-flex align-items-center justify-content-center" id="back-icon-size"><i class="fas ' + deck1[i]+'  float-middle"></i></div></div></div></div>';
+			card1='<div class="col-md-4 col-6 p-1"><div class="card card-flip"><div class="card-front text-white bg-purple"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body border p-0 d-flex align-items-center justify-content-center" id="back-icon-size"><i class="fas ' + deck1[i]+'  float-middle"></i></div></div></div></div>';
 			card2='<div class="col-md-4 col-6 p-1"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body border p-0 d-flex align-items-center justify-content-center" id="back-text-size">' +deck2[i] +'</div></div></div></div>';
 			/*Add images to the 2 decks */
 			deck1div.innerHTML+=card1;
