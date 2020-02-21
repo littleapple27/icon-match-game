@@ -1,0 +1,204 @@
+{ 
+   "deck":[ 
+      { 
+         "name":"fa-video",
+         "target":"video"
+      },
+      { 
+         "name":"fas fa-bolt",
+         "target":"flash"
+      },
+      { 
+         "name":"fas fa-bookmark",
+         "target":"bookmark"
+      },
+      { 
+         "name":"fa-video",
+         "target":"video"
+      },
+      { 
+         "name":"fa-bullhorn",
+         "target":"announcement"
+      },
+      { 
+         "name":"fa-cloud-upload-alt",
+         "target":"cloud upload"
+      },
+      { 
+         "name":"fa-compress",
+         "target":"minimize"
+      },
+      { 
+         "name":"fa-concierge-bell",
+         "target":"request service"
+      },
+      { 
+         "name":"fa-credit-card",
+         "target":"payment"
+      },
+      { 
+         "name":"fa-directions",
+         "target":"direction"
+      },
+      { 
+         "name":"fa-donate",
+         "target":"donate"
+      },
+      { 
+         "name":"fa-exchange-alt",
+         "target":"exchange"
+      },
+      { 
+         "name":"fa-expand",
+         "target":"expand"
+      },
+      { 
+         "name":"fa-external-link-alt",
+         "target":"external link"
+      },
+      { 
+         "name":"fa-eye",
+         "target":"visibile"
+      },
+      { 
+         "name":"fa-grip-lines",
+         "target":"grip lines"
+      },
+      { 
+         "name":"fa-life-ring",
+         "target":"help & support"
+      },
+      { 
+         "name":"fa-location-arrow",
+         "target":"location arrow"
+      },
+      { 
+         "name":"fa-lock",
+         "target":"security"
+      },
+      { 
+         "name":"fa-moon",
+         "target":"sleep mode"
+      },
+      { 
+         "name":"fa-street-view",
+         "target":"steet view"
+      },
+      { 
+         "name":"fa-th",
+         "target":"table view"
+      },
+      { 
+         "name":"fa-address-book",
+         "target":"contacts"
+      },
+      { 
+         "name":"fa-archive",
+         "target":"archive"
+      },
+      { 
+         "name":"fa-bus",
+         "target":"bus route"
+      },
+      { 
+         "name":"fa-calendar-alt",
+         "target":"calendar"
+      },
+      { 
+         "name":"fa-clipboard",
+         "target":"clipboard"
+      },
+      { 
+         "name":"fa-clone",
+         "target":"clone or copy"
+      },
+      { 
+         "name":"fa-money-bill",
+         "target":"money"
+      },
+      { 
+         "name":"fa-paste",
+         "target":"paste"
+      },
+      { 
+         "name":"fa-power-off",
+         "target":"power off"
+      },
+      { 
+         "name":"fa-trash-alt",
+         "target":"delete"
+      },
+      { 
+         "name":"fa-wifi",
+         "target":"wifi"
+      },
+      { 
+         "name":"fa-bars",
+         "target":"menu"
+      },
+      { 
+         "name":"fa-bell",
+         "target":"notifications"
+      },
+      { 
+         "name":"fa-camera",
+         "target":"images"
+      },
+      { 
+         "name":"fa-cog",
+         "target":"settings"
+      },
+      { 
+         "name":"fa-comment-alt",
+         "target":"comments"
+      },
+      { 
+         "name":"fa-download",
+         "target":"file download"
+      },
+      { 
+         "name":"fa-ellipsis",
+         "target":"more"
+      },
+      { 
+         "name":"fa-globe",
+         "target":"language settings"
+      },
+      { 
+         "name":"fa-heart",
+         "target":"mark as favorite"
+      },
+      { 
+         "name":"fa-fa-sign-in-alt",
+         "target":"sign-in"
+      },
+      { 
+         "name":"fa-map-marker-alt",
+         "target":"location marker"
+      },
+      { 
+         "name":"fa-pencil-alt",
+         "target":"edit"
+      },
+      { 
+         "name":"fa-search",
+         "target":"search"
+      },
+      { 
+         "name":"fa-share-alt",
+         "target":"share"
+      },
+      { 
+         "name":"fa-shopping-cart",
+         "target":"shopping cart"
+      },
+      { 
+         "name":"fa-star",
+         "target":"ratings"
+      },
+      { 
+         "name":"fa-user",
+         "target":"user account"
+      }
+   ]
+}

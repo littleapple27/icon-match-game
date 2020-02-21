@@ -1,14 +1,209 @@
 
- 	$(document).ready(function(){
-        $("#myModal").modal('show');
-    }); 
 	
 	/* This is the array that contains the icon deck (32 icons) */
 	var deck=[
-	'fas fa-bolt','fas fa-bookmark','fa-bullhorn','fa-cloud-upload-alt','fa-compress','fa-concierge-bell','fa-credit-card','fa-directions','fa-donate','fa-exchange-alt','fa-expand','fa-external-link-alt','fa-eye','fa-grip-lines','fa-life-ring','fa-location-arrow','fa-lock','fa-moon','fa-street-view','fa-th','fa-address-book','fa-address-card','fa-archive','fa-award','fa-bus','fa-calendar-alt','fa-clipboard','fa-clone','fa-download','fa-laptop','fa-money-bill','fa-paste','fa-power-off', 'fa-trash-alt','fa-wifi', 'fa-video'];
-	/* This is the array that contains the target meanings  */
-	var deckChoice = [ 'address book','address card','archive','flash','bookmark','announcement','calendar','clipboard','cloud download','cloud upload','compress','request service','credit card','directions','donate','exchange','expand','external link','invisible','visible','grip lines','help & support','location arrow','locked','microphone','sleep mode','send','sign out','street view','table view','delete','movie'
-	];
+		{  
+         name:"fa-video",
+         target:"video"
+      	},
+      { 
+         name:"fa-bolt",
+         target:"flash"
+      },
+      { 
+         name:"fa-bookmark",
+         target:"bookmark"
+      },
+      { 
+         name:"fa-video",
+         target:"video"
+      },
+      { 
+         name:"fa-bullhorn",
+         target:"announcement"
+      },
+      { 
+         name:"fa-cloud-upload-alt",
+         target:"cloud<br />upload"
+      },
+      { 
+         name:"fa-compress",
+         target:"minimize"
+      },
+      { 
+         name:"fa-concierge-bell",
+         target:"request<br />service"
+      },
+      { 
+         name:"fa-credit-card",
+         target:"payment"
+      },
+      { 
+         name:"fa-directions",
+         target:"direction"
+      },
+      { 
+         name:"fa-donate",
+         target:"donate"
+      },
+      { 
+         name:"fa-exchange-alt",
+         target:"exchange"
+      },
+      { 
+         name:"fa-expand",
+         target:"expand"
+      },
+      { 
+         name:"fa-external-link-alt",
+         target:"external<br />link"
+      },
+      { 
+         name:"fa-eye",
+         target:"visibile"
+      },
+      { 
+         name:"fa-grip-lines",
+         target:"grip<br />lines"
+      },
+      { 
+         name:"fa-life-ring",
+         target:"help & support"
+      },
+      { 
+         name:"fa-location-arrow",
+         target:"location<br />arrow"
+      },
+      { 
+         name:"fa-lock",
+         target:"security"
+      },
+      { 
+         name:"fa-moon",
+         target:"sleep<br />mode"
+      },
+      { 
+         name:"fa-street-view",
+         target:"steet view"
+      },
+      { 
+         name:"fa-th",
+         target:"table<br />view"
+      },
+      { 
+         name:"fa-address-book",
+         target:"contacts"
+      },
+      { 
+         name:"fa-archive",
+         target:"archive"
+      },
+      { 
+         name:"fa-bus",
+         target:"bus<br />route"
+      },
+      { 
+         name:"fa-calendar-alt",
+         target:"calendar"
+      },
+      { 
+         name:"fa-clipboard",
+         target:"clipboard"
+      },
+      { 
+         name:"fa-clone",
+         target:"clone"
+      },
+      { 
+         name:"fa-money-bill",
+         target:"money"
+      },
+      { 
+         name:"fa-paste",
+         target:"paste"
+      },
+      { 
+         name:"fa-power-off",
+         target:"power<br />off"
+      },
+      { 
+         name:"fa-trash-alt",
+         target:"delete"
+      },
+      { 
+         name:"fa-wifi",
+         target:"wifi"
+      },
+      { 
+         name:"fa-bars",
+         target:"menu"
+      },
+      { 
+         name:"fa-bell",
+         target:"notifications"
+      },
+      { 
+         name:"fa-camera",
+         target:"images"
+      },
+      { 
+         name:"fa-cog",
+         target:"settings"
+      },
+      { 
+         name:"fa-comment-alt",
+         target:"comments"
+      },
+      { 
+         name:"fa-download",
+         target:"file<br />download"
+      },
+      { 
+         name:"fa-ellipsis-h",
+         target:"more"
+      },
+      { 
+         name:"fa-globe",
+         target:"language<br />settings"
+      },
+      { 
+         name:"fa-heart",
+         target:"favorite"
+      },
+      { 
+         name:"fa-sign-in-alt",
+         target:"sign-in"
+      },
+      { 
+         name:"fa-map-marker-alt",
+         target:"location<br />marker"
+      },
+      { 
+         name:"fa-pencil-alt",
+         target:"edit"
+      },
+      { 
+         name:"fa-search",
+         target:"search"
+      },
+      { 
+         name:"fa-share-alt",
+         target:"share"
+      },
+      { 
+         name:"fa-shopping-cart",
+         target:"shopping<br />cart"
+      },
+      { 
+         name:"fa-star",
+         target:"ratings"
+      },
+      { 
+         name:"fa-user",
+         target:"user"
+      }
+   ];
+
 	/* The two decks containing a subset of X cards */
 	var deck1=[];
 	var deck2=[];
@@ -21,6 +216,7 @@
 	var deck1div=document.getElementById('deck1');
 	var deck2div=document.getElementById('deck2');
 	
+
 	/*
 		Initialize a new game
 	*/
@@ -37,8 +233,8 @@
 		deck=shuffle(deck);
 		/* Populate the 2 decks with X cards based on 20 cards level */
 		for(i=0;i<value;i++){
-			deck1.push(deck[i]);
-			deck2.push(deckChoice[i]);
+			deck1.push(deck[i].name) 
+			deck2.push(deck[i].target);
 		}
 		console.log(deck1);
 		console.log(deck2);
@@ -47,8 +243,8 @@
 		/* Add the cards to the webpage */
 		for(i=0;i<value;i++){
 			/* Create the image elements*/
-			card1='<div class="col-md-4 col-6 p-1"><div class="card card-flip"><div class="card-front text-white bg-purple"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body border p-0 d-flex align-items-center justify-content-center" id="back-icon-size"><i class="fas ' + deck1[i]+'  float-middle"></i></div></div></div></div>';
-			card2='<div class="col-md-4 col-6 p-1"><div class="card card-flip"><div class="card-front text-white bg-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body border p-0 d-flex align-items-center justify-content-center" id="back-text-size">' +deck2[i] +'</div></div></div></div>';
+			card1='<div class="col-md-4 col-6 p-2"><div class="card card-flip border-0"><div class="card-front text-white bg-purple"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center" id="back-icon-size"><i class="fas ' + deck1[i]+'  float-middle"></i></div></div></div></div>';
+			card2='<div class="col-md-4 col-6 p-2"><div class="card card-flip border-0"><div class="card-front text-white bg-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="card-back bg-white"><div class=" noselect card-body  p-0 d-flex align-items-center justify-content-center" id="back-text-size">' +deck2[i] +'</div></div></div></div>';
 			/*Add images to the 2 decks */
 			deck1div.innerHTML+=card1;
 			deck2div.innerHTML+=card2;

@@ -229,6 +229,10 @@ p {
   font-family: "Raleway", sans-serif !important;
 }
 
+.card {
+  border-color: transparent !important;
+}
+
 #title-row {
   background-image: url("../img/globe-title.svg");
   /* The image used */
@@ -274,8 +278,8 @@ p {
   .text-sm {
     font-size: 14px;
   }
-  .container-game {
-    padding: 0 2rem;
+  #game-container {
+    padding: 0 3rem;
   }
 }
 

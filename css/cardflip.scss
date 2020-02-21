@@ -38,21 +38,19 @@ flip card
 
 .card {
   width: inherit;
-  height: 5rem;
+  height: 4.5rem;
   border-radius: 5px;
 }
 
 #back-text-size {
   font-size: .85rem;
+  text-align: center;
 }
 
 #back-icon-size {
   font-size: 2rem;
 }
 
-.card-back > i {
-  font-size: .75rem;
-}
 
 .card-body {
   border-radius: 5px;

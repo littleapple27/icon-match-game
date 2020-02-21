@@ -15,7 +15,6 @@
 	<script src="https://kit.fontawesome.com/bf44c917aa.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto:900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/tabs-wizard.css">
 	<link rel="stylesheet" href="css/custom.min.css">
 	<link rel="stylesheet" href="css/cardflip.min.css">
 	<title>The Unambiguous Icon Project: A Case for Universal Icon Meanings</title>
@@ -192,25 +191,20 @@
 		</div>
 	</div>
 
-	<main class="container-fluid px-5 py-4 mb-0 text-white" id="">
+	<main class="container py-4 mb-0 text-white" id="">
 		
 		<h3 class="text-teal">Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h3>
 		<hr class="my-2 hr-style">
 
-		<ul style="list-style: none;">
-			<li><i class="fas fa-check"></i>&nbsp;Click on an icon from the icon bank to highlight it.</li>
-			<li><i class="fas fa-check"></i>&nbsp;Then, click on a word from the word bank that matches the meaning or
-				function of the icon.</li>
-			<li><i class="fas fa-check"></i>&nbsp;A point will be added for every correct answer.</li>
-			<li><i class="fas fa-check"></i>&nbsp;The game is over when all of the cards are matched.</li>
-			<li><i class="fas fa-check"></i>&nbsp;Good Luck!</li>
-		</ul>
+		<p>
+			Directions: Click on an icon from the icon bank to highlight it.  Then, click on a word from the word bank that matches the meaning or function of the icon. One point will be added for every correct answer. The game is over when all of the cards are matched. Good Luck!
+		</p>
 
 		<hr class="my-2 hr-style">
 
 		<div class="row">
 			<div class="col-12 text-center d-flex align-items-end">
-				<div><button class="btn btn-lg btn-orange mr-2" id="startBtn" onclick="startGame();">Start game</button>
+				<div><button class="btn btn-lg btn-teal mr-2" id="startBtn" onclick="startGame();">Start game</button>
 				</div>
 				<div class="d-flex flex-column mx-auto">Score<span class="btn outline-teal text-white">00/24</span>
 				</div>
@@ -221,7 +215,7 @@
 	</main>
 
 	<!-- MultiStep Form -->
-	<section class="container" id="">
+	<section class="container-fluid" id="game-container">
 		<!-- <form id="msform" method="post" action=""> ***removed: ask NC question about form****
 			<fieldset class="fieldset px-2"> -->
 
@@ -242,6 +236,7 @@
 				<h3 class="col-12 pt-2 text-white text-center">Word Bank</h3>
 				<div class="row" id="deck2">
 					<!-- This <div>  is in JS code -->
+					</div>
 				</div>
 
 			</div>
@@ -278,6 +273,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
 	</script>
 	<script src="js/shuffle.js"></script>
+	<script src="js/flip.min.js"></script>
 	<script src="js/game.js"></script>
 
 
