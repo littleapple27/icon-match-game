@@ -2,20 +2,12 @@
   color: #f2f2f2 !important;
 }
 
-.text-grey {
-  color: #909095;
+.text-black {
+  color: #0b0c10;
 }
 
 .text-teal {
   color: #39cccc !important;
-}
-
-.text-dk-purple {
-  color: #3E2259;
-}
-
-.text-orange {
-  color: #F26835;
 }
 
 .bg-lt-white {
@@ -38,8 +30,8 @@
   background-color: #39cccc;
 }
 
-.bg-blue {
-  background-color: #328284;
+.bg-black {
+  background-color: #0b0c10;
 }
 
 .bg-orange {
@@ -230,11 +222,19 @@ p {
 }
 
 .hr-style {
-  border: 1px solid #3E2259 !important;
+  border: 1px solid #39cccc !important;
   width: 100%;
 }
 
 .bobo-image {
+  background-image: -moz-linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
+  background-image: -webkit-linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
+  background-image: linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
+  background-position: bottom center;
+  background-size: cover;
+}
+
+.jumbo-image {
   background-image: -moz-linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
   background-image: -webkit-linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
   background-image: linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");

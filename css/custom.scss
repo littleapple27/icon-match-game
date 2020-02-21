@@ -1,31 +1,26 @@
-$blue: #328284;
+
 $teal: #39cccc;
-$orange: #F26835;
-$purple: #3E2259;
 $lt-teal: #85e0e0;
+$orange: #F26835;
+$purple: #3E2259;;
 $white: #f2f2f2;
 $grey: #909095;
+$black:#0b0c10;
 
  
 //// //////text styles////////////////////////
 .text-white {
 	color: $white!important; 
 }
+.text-black {
+	color: $black; 
 
-.text-grey {
-	color: $grey;
 }
 .text-teal {
 	color: $teal!important; 
 }
 
-.text-dk-purple {
-	color: $purple;
-}
 
-.text-orange {
-	color: $orange;
-}
 
 ///////////background styles/////////////////
 .bg-lt-white {
@@ -49,8 +44,8 @@ $grey: #909095;
 	background-color: $teal; 
 }
 
-.bg-blue {
-	background-color: $blue; 
+.bg-black {
+	background-color: $black; 
 }
 
 .bg-orange {
@@ -237,11 +232,22 @@ p {
 ///////////page styles/////////////////
 
 .hr-style {
-	border: 1px solid $purple!important;
+	border: 1px solid $teal!important;
 	width: 100%;
 }
 
 .bobo-image {
+    background-image: -moz-linear-gradient(45deg, rgba(17,17,17,.9) 25%, rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
+    background-image: -webkit-linear-gradient(45deg,rgba(17,17,17,.9) 25%,rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
+    background-image: linear-gradient(45deg, rgba(17,17,17,.9) 25%,rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
+    background-position: bottom center;
+    background-size: cover;
+}
+
+
+
+//// jumbo styles
+.jumbo-image {
     background-image: -moz-linear-gradient(45deg, rgba(17,17,17,.9) 25%, rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
     background-image: -webkit-linear-gradient(45deg,rgba(17,17,17,.9) 25%,rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
     background-image: linear-gradient(45deg, rgba(17,17,17,.9) 25%,rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
