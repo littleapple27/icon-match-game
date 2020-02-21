@@ -14,28 +14,38 @@
 	<meta property="og:description" content="An experiment at Fort Hays State University" />
 	<script src="https://kit.fontawesome.com/bf44c917aa.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto:900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:500|Roboto:900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/custom.min.css">
 	<link rel="stylesheet" href="css/cardflip.min.css">
 	<title>The Unambiguous Icon Project: A Case for Universal Icon Meanings</title>
 
 </head>
 
-<body class="bg-black" onload="loadGame()">
+<body class="bg-light" onload="loadGame()">
+
+	<header class="container-fluid bg-dk-purple py-1 text-right" id="">
+		<!-- Image and text -->
+		<nav class="d-flex flex-row justify-content-end align-items-center">
+			<a class="navbar-brand text-teal align-items-center" href="mailto:amlegleiter@mail.fhsu.edu">
+				<i class="fas fa-envelope"></i>&nbsp;<span class="text-sm"></span>
+			</a>
+		</nav>
+
+	</header>
 
 	<!---- Demographic Form Pop-Up Modal on Page Load---->
 	<div id="myModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h3 class="modal-title">A little bit about yourself, please...</h3>
+					<p class="modal-title">To get started, please answer the following questions:</p>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 					<form>
-						<div class="form-inline ">
+						<div class="">
 							<p>I am an awesome&nbsp;
 								<select class="form-control" id="gender" name="gender" required>
 									<option value="" disabled selected hidden>Please choose gender
@@ -49,8 +59,8 @@
 						</div>
 
 
-						<div class="form-inline">
-							<p>&nbsp;who has celebrated &nbsp;
+						<div class="">
+							<p>&nbsp; and on my last birthday, I turned &nbsp;
 								<select class="form-control" id="age" name="age" required>
 									<option value="" disabled selected hidden>Please select age
 									</option>
@@ -130,12 +140,11 @@
 									<option value="90">90</option>
 									<option value="N">Prefer not to say</option>
 								</select>
-								&nbsp;birthdays. &nbsp;
 							</p>
 						</div>
 
-						<div class="form-inline">
-							<p>and my race/ethinicity is&nbsp;
+					<!-- 	<div class="form-inline">
+							<p>My race/ethinicity is&nbsp;
 								<select class="form-control" id="ethnicity" name="ethnicity" required />
 								<option value="">Select</option>
 								<option value="indian-alaskan">American Idian or Alaskan Native
@@ -148,7 +157,7 @@
 								<option value="not-say">Prefer not to say</option>
 								</select>
 							</p>
-						</div>
+						</div> -->
 
 						<div class="form-inline">
 							<p>&nbsp;Every day, I use my smart phone, tablet and/or
@@ -191,12 +200,12 @@
 		</div>
 	</div>
 
-	<main class="container py-4 mb-0 text-white" id="">
+	<main class="container py-4 mb-0" id="">
 		
-		<h3 class="text-teal">Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h3>
+		<h3 class="text-dk-purple">Icon <i class="fas fa-arrow-right"></i> Word Matching Game</h3>
 		<hr class="my-2 hr-style">
 
-		<p>
+		<p clas="text-dk-purple">
 			Directions: Click on an icon from the icon bank to highlight it.  Then, click on a word from the word bank that matches the meaning or function of the icon. One point will be added for every correct answer. The game is over when all of the cards are matched. Good Luck!
 		</p>
 
@@ -206,10 +215,10 @@
 			<div class="col-12 text-center d-flex align-items-end">
 				<div><button class="btn btn-lg btn-teal mr-2" id="startBtn" onclick="startGame();">Start game</button>
 				</div>
-				<div class="d-flex flex-column mx-auto">Score<span class="btn outline-teal text-white">00/24</span>
+				<div class="d-flex flex-column mx-auto">Score<span class="btn outline-teal text-purple">00/24</span>
 				</div>
 				<div class="d-flex flex-column ml-auto">Time<span
-						class="btn outline-teal text-white mr-auto">0:00</span></div>
+						class="btn outline-teal text-purple mr-auto">0:00</span></div>
 			</div>
 		</div>
 	</main>
@@ -246,22 +255,11 @@
 
 
 
-		<!-- </fieldset> ***removed: ask NC question about form****
-		</form> -->
-
-
-		<!-- progressbar *** THIS WAS FORM FIELDSET PROGRESS BAR TO SHOW PROGRESS IN ORIGINAL GAME VERSION-->
-		<!-- <ul class="d-flex flex-row justify-content-center mb-0" id="progressbar">
-			<li class="active dot" id="dot"></li>
-			<li class="dot"></li>
-			<li class="dot"></li>
-		</ul>  -->
-		<!-- fieldsets -->
 
 
 	</section>
 
-	<footer class="container-fluid py-2 bg-black" id="">
+	<footer class="container-fluid py-2 mt-5 bg-dk-purple" id="">
 		<div class="row">
 			<div class="ml-auto col-md-8 d-flex flex-column justify-content-center px-2 mb-2">
 				<span class=" text-sm text-right text-grey m-0 ">

@@ -1,8 +1,8 @@
 $blue: #328284;
-$teal: #39CCCC;;
-$orange: #fba100;
-$purple: #8b3fa5;
-$black: #111111;
+$teal: #39cccc;
+$orange: #F26835;
+$purple: #3E2259;
+$lt-teal: #85e0e0;
 $white: #f2f2f2;
 $grey: #909095;
 
@@ -19,22 +19,30 @@ $grey: #909095;
 	color: $teal!important; 
 }
 
+.text-dk-purple {
+	color: $purple;
+}
+
+.text-orange {
+	color: $orange;
+}
+
 ///////////background styles/////////////////
 .bg-lt-white {
 	background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .bg-lt-purple {
-	background-color: #af6ac6; 
+	background-color: #735A8C; 
 }
 
 .bg-lt-teal {
-	background-color:#76dcdc; 
+	background-color:$lt-teal; 
 }
 
 
-.bg-black {
-	background-color: $black; 
+.bg-dk-purple {
+	background-color: $purple; 
 }
 
 .bg-teal {
@@ -126,21 +134,36 @@ $grey: #909095;
 
 .btn-orange:hover {
 	font-family: 'Roboto', sans-serif!important;
-	background-color: rgba(251, 161, 0, 0.75)!important;
+	background-color: rgba(242,104,53, 0.75)!important;
 	border: 0; 
 	color: $white!important; 
 }
 
+.btn-purple {
+	font-family: 'Roboto', sans-serif!important;
+	background-color: $purple!important;
+	border: 0; 
+	color: $white; 
+}
+
+.btn-purple:hover {
+	font-family: 'Roboto', sans-serif!important;
+	background-color: rgba(62,34,89, 0.75)!important;
+	border: 0; 
+	color: $white!important; 
+}
 
 .outline-teal {
-  color: $teal;
+  color: $purple;
   font-family: 'Roboto', sans-serif;
   border-color: $teal;
 }
 
+
+/////// <a> hover style /////////
 a:hover {
 	font-family: 'Raleway', sans-serif;
-	color: rgba(57, 204, 204, 1)!important;
+	color: rgba(57,204,204, 1)!important;
 	text-decoration: underline;
 }
 
@@ -214,11 +237,11 @@ p {
 ///////////page styles/////////////////
 
 .hr-style {
-	border: .5px solid $teal!important;
+	border: 1px solid $purple!important;
 	width: 100%;
 }
 
-.jumbo-image {
+.bobo-image {
     background-image: -moz-linear-gradient(45deg, rgba(17,17,17,.9) 25%, rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
     background-image: -webkit-linear-gradient(45deg,rgba(17,17,17,.9) 25%,rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
     background-image: linear-gradient(45deg, rgba(17,17,17,.9) 25%,rgba(17,17,17,.9) 100%), url("../img/jumbo2.jpg");
@@ -226,32 +249,9 @@ p {
     background-size: cover;
 }
 
-.card-img-top {
-	width: 8rem;
-	height: auto; 
-}
-
-.card-body {
-	font-family: 'Raleway', sans-serif!important;
-}
-
-.card {
-	border-color: transparent!important;
-}
-
-
-#title-row {
-  background-image: url("../img/globe-title.svg"); /* The image used */
-  background-color: $black; /* Used if the image is unavailable */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-position: left top; 
-}
-
 .jumbotron-fluid {
 	padding: 10%;
 }
-
-
 
 //Media Queries
 //------------------------------------------------------------//

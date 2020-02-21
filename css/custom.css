@@ -7,7 +7,15 @@
 }
 
 .text-teal {
-  color: #39CCCC !important;
+  color: #39cccc !important;
+}
+
+.text-dk-purple {
+  color: #3E2259;
+}
+
+.text-orange {
+  color: #F26835;
 }
 
 .bg-lt-white {
@@ -15,19 +23,19 @@
 }
 
 .bg-lt-purple {
-  background-color: #af6ac6;
+  background-color: #735A8C;
 }
 
 .bg-lt-teal {
-  background-color: #76dcdc;
+  background-color: #85e0e0;
 }
 
-.bg-black {
-  background-color: #111111;
+.bg-dk-purple {
+  background-color: #3E2259;
 }
 
 .bg-teal {
-  background-color: #39CCCC;
+  background-color: #39cccc;
 }
 
 .bg-blue {
@@ -35,7 +43,7 @@
 }
 
 .bg-orange {
-  background-color: #fba100;
+  background-color: #F26835;
 }
 
 .bg-grey {
@@ -43,7 +51,7 @@
 }
 
 .bg-purple {
-  background-color: #8b3fa5;
+  background-color: #3E2259;
 }
 
 .btn-blue:hover {
@@ -54,7 +62,7 @@
 
 .btn-teal {
   font-family: "Roboto", sans-serif !important;
-  background-color: #39CCCC !important;
+  background-color: #39cccc !important;
   border: 0;
   color: #f2f2f2;
 }
@@ -67,16 +75,16 @@
 }
 
 .btn-outline-teal {
-  color: #39CCCC;
+  color: #39cccc;
   font-family: 'Roboto', sans-serif;
-  border-color: #39CCCC;
+  border-color: #39cccc;
 }
 
 .btn-outline-teal:hover {
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  background-color: #39CCCC;
-  border-color: #39CCCC;
+  background-color: #39cccc;
+  border-color: #39cccc;
 }
 
 .btn-outline-teal:focus, .btn-outline-teal.focus {
@@ -85,15 +93,15 @@
 
 .btn-outline-teal.disabled, .btn-outline-teal:disabled {
   color: #fff;
-  background-color: #39CCCC;
-  border-color: #39CCCC;
+  background-color: #39cccc;
+  border-color: #39cccc;
 }
 
 .btn-outline-teal:not(:disabled):not(.disabled):active, .btn-outline-teal:not(:disabled):not(.disabled).active,
 .show > .btn-outline-teal.dropdown-toggle {
   color: #fff;
-  background-color: #39CCCC;
-  border-color: #39CCCC;
+  background-color: #39cccc;
+  border-color: #39cccc;
 }
 
 .btn-outline-teal:not(:disabled):not(.disabled):active:focus, .btn-outline-teal:not(:disabled):not(.disabled).active:focus,
@@ -103,22 +111,36 @@
 
 .btn-orange {
   font-family: "Roboto", sans-serif !important;
-  background-color: #fba100 !important;
+  background-color: #F26835 !important;
   border: 0;
   color: #f2f2f2;
 }
 
 .btn-orange:hover {
   font-family: "Roboto", sans-serif !important;
-  background-color: rgba(251, 161, 0, 0.75) !important;
+  background-color: rgba(242, 104, 53, 0.75) !important;
+  border: 0;
+  color: #f2f2f2 !important;
+}
+
+.btn-purple {
+  font-family: "Roboto", sans-serif !important;
+  background-color: #3E2259 !important;
+  border: 0;
+  color: #f2f2f2;
+}
+
+.btn-purple:hover {
+  font-family: "Roboto", sans-serif !important;
+  background-color: rgba(62, 34, 89, 0.75) !important;
   border: 0;
   color: #f2f2f2 !important;
 }
 
 .outline-teal {
-  color: #39CCCC;
+  color: #3E2259;
   font-family: 'Roboto', sans-serif;
-  border-color: #39CCCC;
+  border-color: #39cccc;
 }
 
 a:hover {
@@ -208,39 +230,16 @@ p {
 }
 
 .hr-style {
-  border: 0.5px solid #39CCCC !important;
+  border: 1px solid #3E2259 !important;
   width: 100%;
 }
 
-.jumbo-image {
+.bobo-image {
   background-image: -moz-linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
   background-image: -webkit-linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
   background-image: linear-gradient(45deg, rgba(17, 17, 17, 0.9) 25%, rgba(17, 17, 17, 0.9) 100%), url("../img/jumbo2.jpg");
   background-position: bottom center;
   background-size: cover;
-}
-
-.card-img-top {
-  width: 8rem;
-  height: auto;
-}
-
-.card-body {
-  font-family: "Raleway", sans-serif !important;
-}
-
-.card {
-  border-color: transparent !important;
-}
-
-#title-row {
-  background-image: url("../img/globe-title.svg");
-  /* The image used */
-  background-color: #111111;
-  /* Used if the image is unavailable */
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-position: left top;
 }
 
 .jumbotron-fluid {

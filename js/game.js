@@ -1,5 +1,4 @@
 
-	
 	/* This is the array that contains the icon deck (32 icons) */
 	var deck=[
 		{  
@@ -216,6 +215,10 @@
 	var deck1div=document.getElementById('deck1');
 	var deck2div=document.getElementById('deck2');
 	
+     
+   $(document).ready(function(){
+        $("#myModal").modal('show');
+    }); 
 
 	/*
 		Initialize a new game
@@ -367,7 +370,6 @@
 		$(window).bind('beforeunload', function(){
 			return 'Are you sure you want to leave?';
 		});
-
 
 
 
