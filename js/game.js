@@ -329,7 +329,7 @@
 
 	function checkMatch(cardValue){
 	/* Clear the selected cards */
-	if(deck2select===deck1select){
+	if(deck2select==deck1select){
       console.log("winner winner chicken dinner")
 			/* We have a match*/
 			/* Add the cards to the matched array */
