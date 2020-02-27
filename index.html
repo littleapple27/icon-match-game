@@ -14,14 +14,183 @@
 	<meta property="og:description" content="An experiment at Fort Hays State University" />
 	<script src="https://kit.fontawesome.com/bf44c917aa.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto:900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/custom.min.css">
 	<title>The Unambiguous Icon Project: A Case for Universal Icon Meanings</title>
 
 </head>
 
-<body class="bg-black">
-	<header class="container-fluid py-1 text-right" id="">
+<body class="bg-dark">
+
+	<!---- Demographic Form Pop-Up Modal on Page Load---->
+	<section id="myModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<p class="lead">You have been invited to participate in a icon&nbsp;<span class="text-teal"><i class="fas fa-arrow-right"></i></span>&nbsp;word matching game designed for research. To get started, please fill out the following information.</p>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="">
+							<p>I am an awesome&nbsp;
+								<select class="form-control" id="gender" name="gender" required>
+									<option value="" disabled selected hidden>Please choose gender
+									</option>
+									<option value="female">Female</option>
+									<option value="male">Male</option>
+									<option value="other-gender">Other</option>
+								</select>
+
+							</p>
+						</div>
+
+
+						<div class="">
+							<p>&nbsp; and on my last birthday, I turned &nbsp;
+								<select class="form-control" id="age" name="age" required>
+									<option value="" disabled selected hidden>Please select age
+									</option>
+									<option value="">Select</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+									<option value="61">61</option>
+									<option value="62">62</option>
+									<option value="63">63</option>
+									<option value="64">64</option>
+									<option value="65">65</option>
+									<option value="66">66</option>
+									<option value="67">67</option>
+									<option value="68">68</option>
+									<option value="69">69</option>
+									<option value="70">70</option>
+									<option value="71">71</option>
+									<option value="72">72</option>
+									<option value="73">73</option>
+									<option value="74">74</option>
+									<option value="75">75</option>
+									<option value="76">76</option>
+									<option value="77">77</option>
+									<option value="78">78</option>
+									<option value="79">79</option>
+									<option value="80">80</option>
+									<option value="81">81</option>
+									<option value="82">82</option>
+									<option value="83">83</option>
+									<option value="84">84</option>
+									<option value="85">85</option>
+									<option value="86">86</option>
+									<option value="87">87</option>
+									<option value="88">88</option>
+									<option value="89">89</option>
+									<option value="90">90</option>
+									<option value="N">Prefer not to say</option>
+								</select>
+							</p>
+						</div>
+
+					<!-- 	<div class="form-inline">
+							<p>My race/ethinicity is&nbsp;
+								<select class="form-control" id="ethnicity" name="ethnicity" required />
+								<option value="">Select</option>
+								<option value="indian-alaskan">American Idian or Alaskan Native
+								</option>
+								<option value="asian-pacfic">Asian / Pacific Islander</option>
+								<option value="black-african">Black or African American</option>
+								<option value="hispanic">Hispanic</option>
+								<option value="white">White / Caucasian</option>
+								<option value="other-race">Other</option>
+								<option value="not-say">Prefer not to say</option>
+								</select>
+							</p>
+						</div> -->
+
+						<div class="form-inline">
+							<p>&nbsp;Every day, I use my smart phone, tablet and/or
+								desktop for&nbsp;
+								<select class="form-control" id="webUse" name="webUse" required>
+									<option value="" disabled selected hidden>Please choose hours
+										per day</option>
+									<option value="less-one-hour">Less than 1 hour</option>
+									<option value="one-three-hour">1-3 hours</option>
+									<option value="four-eight-hour">4-8 hours</option>
+									<option value="more-than-eight">More than 8 hours</option>
+								</select>
+
+							</p>
+						</div>
+
+						<div class="form-inline">
+							<p>&nbsp;and my highest level of education is&nbsp;
+								<select class="form-control" id="education" name="education" required>
+									<option value="" disabled selected hidden>Please choose
+										education level</option>
+									<option value="no-ed">Less than high school diploma or
+										equivalent (e.g. GED)</option>
+									<option value="high">High school diploma or equivalent (e.g.
+										GED)</option>
+									<option value="associate">Associate Degree</option>
+									<option value="bachelor">Bachelor Degree</option>
+									<option value="graduate">Graduate Degree</option>
+									<option value="doctoral">Doctoral Degree</option>
+									<option value="other-ed">Other</option>
+								</select>
+							</p>
+						</div>
+
+						<button type="submit" name="submit" value="submit" class="btn btn-lg btn-teal" id="lets-play-btn">Let's
+							Play!&nbsp;&nbsp;<i class="fas fa-angle-double-right"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<header class="container-fluid bg-dark py-1 text-right shadow">
 		<!-- Image and text -->
 		<nav class="d-flex flex-row justify-content-end align-items-center">
 			<a class="navbar-brand text-teal align-items-center" href="mailto:amlegleiter@mail.fhsu.edu">
@@ -31,35 +200,85 @@
 
 	</header>
 
-	<div class="jumbotron-fluid px-5 d-flex flex-column justify-content-center jumbo-image">
-		<h1 class="display-4 text-teal">Icon&nbsp; <span class="text-teal"><i class="fas fa-arrow-right"></i></span> &nbsp;Word Matching Game</h1>
-		<p class="lead text-white">You have been invited to participate to a icon&nbsp;<span class="text-teal"><i class="fas fa-arrow-right"></i></span>&nbsp;word matching game,
-			designed as a graduate research project for the Department of Informatics at Fort Hays State University. The
-			purpose of
-			the study is to evaluate the degree to which flat icons have a universal meaning and can be
-			recognized properly by users</p>
-		<hr class="my-4 hr-style">
-		<p class="text-white"><strong>On the following next page, you will be presented with a series of
-				web-based application icons. For each icon, please match the icon to the word that represents the icons' meaning and/or function.  Thank you for playing!</strong></p>
-		<p class="text-white text-center ">
-			
-			<span class="text-sm">By clicking on the button below, you declare that you've read and agree with
-				the <a class="text-teal" href="informed_consent.pdf" target="_blank">informed consent</a>.</p>
-		<p class="text-center mt-3"><a class="btn btn-teal btn-lg" href="game.html">Click here to play</a>
-			</span>
+
+	<section class="container py-4 mb-0">
+		
+		<h1 class="display-4 text-teal text-shadow">Icon <i class="fas fa-arrow-right"></i> Word Match Game</h1>
+		<p class="text-white p-2 rounded">
+			Directions: Click on an icon from the icon bank to highlight it.  Then, click on a word from the word bank that matches the meaning or function of the icon. One point will be added for every correct answer. The game is over when all of the cards are matched. Good Luck!
 		</p>
-	</div>
 
 
-	<footer class="container-fluid py-2 bg-black fixed-bottom" id="">
-		<div class="row">
-			<div class="ml-auto col-md-8 d-flex flex-column justify-content-center px-2 mb-2">
-				<span class=" text-sm text-right text-grey m-0 ">
-					&copy; 2019 amlegleiter@mail.fhsu.edu</span>
+
+	</section>
+
+	<!---Start button, score, clicks and timer section-->
+	<section class="container bg-white rounded shadow mb-2 score-section">
+		
+			<div class="bg-navy text-center text-dark d-flex align-items-end justify-content-between py-2">
+				<div>
+					<button class="btn btn-md btn-teal mr-2" id="start-btn" onclick="startGame();"><i class="fa fa-play"></i>&nbsp;Play game</button>
+				</div>
+				<div class="mx-auto score">
+					<span>Score:</span><span>00/24</span>
+				</div>
+				<div class="d-flex mx-auto moves">
+					<span>Moves:</span><span">0</span>
+				</div>
+				<div class="d-flex mx-auto">
+					<span class="timer"><i class="fas fa-stopwatch"></i>&nbsp;00:&nbsp;00:&nbsp;00</span>
+				</div>
 			</div>
+		
+
+		<!-- <form id="msform" method="post" action=""> ***removed: ask NC question about form****
+			<fieldset class="fieldset px-2"> -->
+
+		<div class="row bg-teal rounded-bottom p-2">
+			<!---Inner Row--->
+			<div class="col-6 mb-1 rounded-left" id="icon-bank">
+				<!---Outer Column--->
+				<div class="row p-2" id="deck1">
+					<!-- This <div>  is in JS code -->
+				</div>
+
+				
+
+				<!---Inner Deck Row--->
+			</div>
+			<!---Inner Column--->
+
+			<div class="col-6 mb-1 rounded-right" id="word-bank">
+				<!---Outer Column--->
+				<div class="row p-2" id="deck2">
+					<!-- This <div>  is in JS code -->
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+		<!---end of outer row--->
+
+
+
+
+
+	</section>
+
+	<footer class="container-fluid top-shadow py-2 mt-5 bg-dark" id="">
+			<div class="d-flex flex-column justify-content-center px-2 mb-2 text-sm text-left text-light m-0 ">
+				<div>Disclaimer: The data collected by the page could be published in aggregate form to help understand use of icons and to improve the understanding and usability of icons in web-based UI development.</div>
+				<div>&copy; 2019 amlegleiter@mail.fhsu.edu</div>
 	</footer>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+	</script>
+	<script src="js/shuffle.js"></script>
+	<script src="js/game.js"></script>
+
+
 </body>
 
 </html>

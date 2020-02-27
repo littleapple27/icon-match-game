@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Open+Sans+Condensed:300&display=swap');
 
 $teal: #39cccc;
 $lt-teal: #85e0e0;
 $orange: #F26835;
-$purple: #3E2259;;
+$purple: #3E2259;
+$lt-purple: #735A8C;
 $white: #f2f2f2;
 $grey: #909095;
 $black:#0b0c10;
+$dark-1: #646a73;
 
  
 //// //////text styles////////////////////////
@@ -20,6 +23,13 @@ $black:#0b0c10;
 	color: $teal!important; 
 }
 
+.text-purple {
+	color: $teal!important; 
+}
+
+.hover {
+	border: 1px #cca739!important;
+}
 
 
 ///////////background styles/////////////////
@@ -41,7 +51,7 @@ $black:#0b0c10;
 }
 
 .bg-teal {
-	background-color: $teal; 
+	background-color: $teal;
 }
 
 .bg-black {
@@ -71,14 +81,14 @@ $black:#0b0c10;
 }
 
 .btn-teal {
-	font-family: 'Roboto', sans-serif!important;
+	font-family: 'Open Sans Condensed', sans-serif!important;
 	background-color: $teal!important;
 	border: 0; 
 	color: $white; 
 }
 
 .btn-teal:hover {
-	font-family: 'Roboto', sans-serif!important;
+	font-family: 'Open Sans Condensed', sans-serif!important;
 	background-color: rgba(57, 204, 204, 0.75)!important;
 	border: 0; 
 	color: $white!important; 
@@ -87,13 +97,13 @@ $black:#0b0c10;
 
 .btn-outline-teal {
   color: $teal;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   border-color: $teal;
 }
 
 .btn-outline-teal:hover {
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   background-color: $teal;
   border-color: $teal;
 }
@@ -121,28 +131,28 @@ $black:#0b0c10;
 }
 
 .btn-orange {
-	font-family: 'Roboto', sans-serif!important;
+	font-family: 'Open Sans Condensed', sans-serif!important;
 	background-color: $orange!important;
 	border: 0; 
 	color: $white; 
 }
 
 .btn-orange:hover {
-	font-family: 'Roboto', sans-serif!important;
+	font-family: 'Open Sans Condensed', sans-serif!important;
 	background-color: rgba(242,104,53, 0.75)!important;
 	border: 0; 
 	color: $white!important; 
 }
 
 .btn-purple {
-	font-family: 'Roboto', sans-serif!important;
+	font-family: 'Open Sans Condensed', sans-serif!important;
 	background-color: $purple!important;
 	border: 0; 
 	color: $white; 
 }
 
 .btn-purple:hover {
-	font-family: 'Roboto', sans-serif!important;
+	font-family: 'Open Sans Condensed', sans-serif!important;
 	background-color: rgba(62,34,89, 0.75)!important;
 	border: 0; 
 	color: $white!important; 
@@ -150,7 +160,7 @@ $black:#0b0c10;
 
 .outline-teal {
   color: $purple;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   border-color: $teal;
 }
 
@@ -168,65 +178,65 @@ body {
 }
 html,
 body {
-	font-size: 14px !important;
-	font-family: 'Raleway', sans-serif;
+	font-size: 1rem !important;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 h1 {
 	font-size: 1.602em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 h2 {
 	font-size: 1.424em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 h3 {
 	font-size: 1.266em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 h4 {
 	font-size: 1.125em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 h5 {
 	font-size: 0.889em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 h6 {
 	font-size: 0.79em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 .display-1 {
 	font-size: 3.906em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 .display-2 {
 	font-size: 3.125em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 .display-3 {
 	font-size: 2.5em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 .display-4 {
 	font-size: 2em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 .display-5 {
 	font-size: 2em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Bangers', sans-serif;
 }
 p {
-	font-size: 14px;
-	font-family: 'Raleway', sans-serif;
+	font-size: 1rem;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .text-sm {
 	font-size: 10px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .text-16 {
 	font-size: 1rem;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 
 ///////////page styles/////////////////
@@ -244,7 +254,12 @@ p {
     background-size: cover;
 }
 
-
+///Top shadow for bottom fixed navbar
+.top-shadow {
+  box-shadow: 0px 0 1rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow:0px 0 1rem rgba(0, 0, 0, 0.3);
+	-moz-box-shadow:0px 0 1rem rgba(0, 0, 0, 0.3);
+}
 
 //// jumbo styles
 .jumbo-image {
@@ -258,6 +273,77 @@ p {
 .jumbotron-fluid {
 	padding: 10%;
 }
+
+/*
+flip card
+*/
+.card-flip > div {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform 600ms;
+  transition-timing-function: linear;
+  width: 100%;
+  height: 100%;
+  margin: 1;
+  display: flex;
+  border-radius: 5px;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.card-front-flip {
+  transform: rotateY(-180deg);
+}
+  
+.card-back-flip {
+  transform: rotateY(0deg);
+}
+
+.card {
+  width: 8.5rem;
+  height: 5rem;
+  border-radius: 5px;
+}
+
+#back-text {
+  font-size: .85rem;
+  text-align: center;
+}
+
+#back-icon {
+  font-size: 2rem;
+}
+
+//#back-icon:hover, #back-text:hover {
+	//background-color: #eee;
+//}
+
+.card-body {
+  border-radius: 5px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
 
 //Media Queries
 //------------------------------------------------------------//
@@ -293,11 +379,9 @@ p {
 	font-size: 14px;
 }
 
-	#game-container {
-		padding: 0 3rem;
-	}
-
 }
+
+
 
 
 // Large devices (desktops, 62em and up)
