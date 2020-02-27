@@ -2,6 +2,16 @@
 $(window).on('load', function () {
    //$('#myModal').modal('show');
    loadGame();
+   $('.card-back').hover(
+				
+               function () {
+                  $(this).css({"border":"3px solid #7D07F2", "background-color":" rgba(125,7,242, 0.2)"});
+               }, 
+				
+               function () {
+                  $(this).css({"border":"none", "background-color":"#f2f2f2"});
+               }
+            );
 });
 
 /* This is the array that contains the icon deck (32 icons) */
@@ -243,7 +253,7 @@ function loadGame() {
    /* Add the cards to the webpage */
    for (i = 0; i < value; i++) {
       /* Create the image elements*/
-      card1 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip border-0 shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-icon" data-target="' + deck1[i] + '"><i class="fas ' + deck[i].name + '  float-middle" data-target="' + deck1[i] + '"></i></div></div></div></div>';
+      card1 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-icon" data-target="' + deck1[i] + '"><i class="fas ' + deck[i].name + '  float-middle" data-target="' + deck1[i] + '"></i></div></div></div></div>';
       card2 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip border-0 shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-text" data-target="' + deck2[i] + '">' + deck2[i] + '</div></div></div>';
       /*Add information to the 2 decks */
       deck1div.innerHTML += card1;
@@ -271,10 +281,7 @@ function startGame() {
    startTimer();
    $('.card-front').addClass('card-front-flip').removeClass('.card-front');
    $('.card-back').addClass('card-back-flip').removeClass('.card-back');
-   $('#start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay');
-   //$('#icon-bank').addClass('bg-teal').removeClass('.bg-lt-teal');
-   //$('#word-bank').addClass('bg-lt-teal').removeClass('.bg-teal');
-   //$('#startBtn').html("Start Over");
+   $('#start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay');//NEED TO PROGRAM REPLAY FUNCTION 
 };
 
 
