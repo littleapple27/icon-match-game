@@ -1,34 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers|Open+Sans+Condensed:300&display=swap');
 
-$teal: #39cccc;
-$lt-teal: #85e0e0;
-$orange: #F26835;
-$purple: #3E2259;
-$lt-purple: #735A8C;
+$teal: #23D9B7;
+$lt-teal: #27F2CD;
+$purple: #7D07F2;
+$purple-lt:#AB05F2;
+$blue: #5207F2;
+$yellow: #D7F205;
 $white: #f2f2f2;
 $grey: #909095;
 $black:#0b0c10;
-$dark-1: #646a73;
 
  
 //// //////text styles////////////////////////
 .text-white {
 	color: $white!important; 
 }
-.text-black {
-	color: $black; 
 
-}
 .text-teal {
 	color: $teal!important; 
 }
 
 .text-purple {
-	color: $teal!important; 
+	color: $purple!important; 
 }
 
-.hover {
-	border: 1px #cca739!important;
+.text-yellow {
+	color: $yellow!important; 	
 }
 
 
@@ -37,34 +34,24 @@ $dark-1: #646a73;
 	background-color: rgba(255, 255, 255, 0.1); 
 }
 
-.bg-lt-purple {
-	background-color: #735A8C; 
+.bg-yellow {
+	background-color: $yellow; 
+}
+
+.bg-purple-lt {
+	background-color: $purple-lt; 
+}
+
+.bg-blue {
+	background-color: $blue; 
 }
 
 .bg-lt-teal {
 	background-color:$lt-teal; 
 }
 
-
-.bg-dk-purple {
-	background-color: $purple; 
-}
-
 .bg-teal {
 	background-color: $teal;
-}
-
-.bg-black {
-	background-color: $black; 
-}
-
-.bg-orange {
-	background-color: $orange; 
-}
-
-
-.bg-grey {
-	background-color: $grey; 
 }
 
 .bg-purple {
@@ -73,12 +60,6 @@ $dark-1: #646a73;
 
 
 ///////////button styles/////////////////
-
-.btn-blue:hover {
-	background-color: rgba(111, 147, 199, 0.75)!important;
-	border: 0; 
-	color: $white; 
-}
 
 .btn-teal {
 	font-family: 'Open Sans Condensed', sans-serif!important;
@@ -130,32 +111,56 @@ $dark-1: #646a73;
   box-shadow: 0 0 0 0.2rem rgba(57, 204, 204, 0.5);
 }
 
-.btn-orange {
-	font-family: 'Open Sans Condensed', sans-serif!important;
-	background-color: $orange!important;
-	border: 0; 
-	color: $white; 
-}
 
-.btn-orange:hover {
-	font-family: 'Open Sans Condensed', sans-serif!important;
-	background-color: rgba(242,104,53, 0.75)!important;
-	border: 0; 
-	color: $white!important; 
-}
 
 .btn-purple {
 	font-family: 'Open Sans Condensed', sans-serif!important;
 	background-color: $purple!important;
 	border: 0; 
-	color: $white; 
+	color: $white;
+	text-transform: uppercase; 
 }
 
 .btn-purple:hover {
 	font-family: 'Open Sans Condensed', sans-serif!important;
-	background-color: rgba(62,34,89, 0.75)!important;
+	background-color: rgba(125,7,242, 0.75)!important;
 	border: 0; 
 	color: $white!important; 
+}
+
+.btn-outline-purple {
+  color: $purple;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-color: $purple;
+}
+
+.btn-outline-purple:hover {
+  color: #f2f2f2;
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: $purple;
+  border-color: $purple;
+}
+
+.btn-outline-purple:focus, .btn-outline-teal.focus {
+  box-shadow: 0 0 0 0.2rem rgba(125,7,242, 0.5)!important;
+}
+
+.btn-outline-purple.disabled, .btn-outline-purple:disabled {
+  color: #f2f2f2;
+  background-color: $purple;
+  border-color: $purple;
+}
+
+.btn-outline-purple:not(:disabled):not(.disabled):active, .btn-outline-purple:not(:disabled):not(.disabled).active,
+.show > .btn-outline-purple.dropdown-toggle {
+  color: #f2f2f2;
+  background-color: $purple;
+  border-color: $purple;
+}
+
+.btn-outline-purple:not(:disabled):not(.disabled):active:focus, .btn-outline-purple:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-purple.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(125,7,242, 0.5);
 }
 
 .outline-teal {
@@ -315,6 +320,7 @@ flip card
   width: 8.5rem;
   height: 5rem;
   border-radius: 5px;
+  border: none!important;
 }
 
 #back-text {
