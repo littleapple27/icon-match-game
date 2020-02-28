@@ -1,6 +1,6 @@
 /* Method to show demographic form on page load */
 $(window).on('load', function () {
-   //$('#myModal').modal('show');
+   $('#myModal').modal('show');
    loadGame();
    $('.card-back').hover(
 				
@@ -228,7 +228,34 @@ var deck2div = document.getElementById('deck2');
 var numMoves = 0;
 var totScore = 0;
 
+function loadGame() {
+   /* Set value to 18 cards */
+   var value = 18;
+   console.log(value);
 
+   /* Initialize the board*/
+   initializeBoard();
+   /* Shuffle the deck with 52 cards */
+   deck = shuffle(deck);
+   /* Populate the 2 decks with X cards based on 20 cards level */
+   for (i = 0; i < value; i++) {
+      deck1.push(deck[i].target)
+      deck2.push(deck[i].target);
+   }
+   console.log(deck1);
+   console.log(deck2);
+   /* Shuffle the second deck */
+   shuffle(deck2);
+   /* Add the cards to the webpage */
+   for (i = 0; i < value; i++) {
+      /* Create the image elements*/
+      card1 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-icon" data-target="' + deck1[i] + '"><i class="fas ' + deck[i].name + '  float-middle" data-target="' + deck1[i] + '"></i></div></div></div></div>';
+      card2 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip border-0 shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-text" data-target="' + deck2[i] + '">' + deck2[i] + '</div></div></div>';
+      /*Add information to the 2 decks */
+      deck1div.innerHTML += card1;
+      deck2div.innerHTML += card2;
+   }
+}
 
 
 /* Function to initialize a new game */
@@ -281,7 +308,7 @@ function startGame() {
    startTimer();
    $('.card-front').addClass('card-front-flip').removeClass('.card-front');
    $('.card-back').addClass('card-back-flip').removeClass('.card-back');
-   $('#start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay');//NEED TO PROGRAM REPLAY FUNCTION 
+   $('.start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay').removeClass("start-btn").addClass("replay-btn").attr("onclick","loadGame()");//NEED TO PROGRAM REPLAY FUNCTION 
 };
 
 
@@ -356,6 +383,9 @@ function checkMatch(cardValue) {
       numMoves = numMoves + 1;
       /* Add +1 to number of moves */
       $('.moves').text(numMoves);
+      /* Add +1000 to total score */
+      totScore = totScore - 250;
+      $('.score').text(totScore);
       /* Clear the select cards */
       deck1select = '';
       deck2select = '';
