@@ -160,13 +160,15 @@ $black:#0b0c10;
 
 .btn-outline-purple:not(:disabled):not(.disabled):active:focus, .btn-outline-purple:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-purple.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(125,7,242, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(57, 204, 204, 0.5);
 }
 
 .outline-teal {
   color: $purple;
   font-family: 'Open Sans Condensed', sans-serif;
-  border-color: $teal;
+  border: 1px solid $teal!important;
+  border-radius: 5px;
+  background-color: $white;
 }
 
 

@@ -25,7 +25,7 @@
 	<!---- Demographic Form Pop-Up Modal on Page Load---->
 	<section id="myModal" class="modal fade">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<div class="modal-content bg-purple text">
 				<div class="modal-header">
 					<p class="lead">You have been invited to participate in a icon&nbsp;<span class="text-purple"><i class="fas fa-arrow-right"></i></span>&nbsp;word matching game designed for research. To get started, please fill out the following information.</p>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -205,7 +205,7 @@
 		
 		<h1 class="display-4 text-teal text-shadow">Icon <span class="text-yellow"><i class="fas fa-arrow-right"></i></span> Word Match Game</h1>
 		<p class="text-white p-2 rounded">
-			Directions: Click on an icon from the icon bank to highlight it.  Then, click on a word from the word bank that matches the meaning or function of the icon. 1,000 points will be added for every correct answer. The game is over when all of the cards are matched. Good Luck!
+			Directions: Click on an icon to highlight it.  Then, click on a word that matches the meaning or function of the icon. +1,000 points for every correct match, -250 points for incorrect matches. The game is over when all of the cards are matched. Good Luck!
 		</p>
 
 
@@ -213,32 +213,42 @@
 	</section>
 
 	<!---Start button, score, clicks and timer section-->
-	<section class="container bg-white shadow mb-2 score-section rounded">
-		<div class="row">
-			<div class="col-12 bg-yellow text-center rounded-top text-dark d-flex align-items-center justify-content-around py-2">
-				<div>
-					<button class="btn btn-lg btn-purple mr-2" id="start-btn" onclick="startGame();"><i class="fa fa-play"></i>&nbsp;Play game</button>
-				</div>
-				<div><h4 class="mb-0">
-					Score:&nbsp;<span class="score">0000</span></h4>
-				</div>
-				<div><h4 class="mb-0"> Total Moves:&nbsp;
-					<span class="moves">0</span></h4>
-				</div>
-				<div><h4 class="mb-0">
-					<span class="timer"><i class="fas fa-stopwatch"></i>&nbsp;00:&nbsp;00:&nbsp;00</span></h4>
-				</div>
-			</div>
+	<section class="container bg-light shadow mb-2 score-section rounded">
+		
+			<div class="rounded-top py-2 text-center text-dark d-flex flex-column-reverse flex-sm-row align-content-sm-stretch justify-content-around">
+				
+					
+					<div class="m-1 align-content-sm-stretch flex-fill">
+							<button class="btn btn-md btn-purple start-btn btn-block" onclick="startGame();"><i class="fa fa-play"></i>&nbsp;Play game</button>
+						</div>
+			
+				
+		
+						
+						<div class="outline-teal m-1 p-1  align-content-sm-stretch flex-fill d-flex align-items-center justify-content-center"><p class="text-yellow mb-0">
+							<i class="fa fa-star"></i>&nbsp;<span class="score text-purple">00000</span></p>
+						</div>
+						<div class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center"><p class="text-teal  mb-0"><i class="fas fa-chess"></i>&nbsp;
+							<span class="moves text-purple">0</span></p>
+						</div>
+						<div class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center"><p class="mb-0">
+							<span class="timer text-purple"><i class="fas fa-stopwatch"></i>&nbsp;00:&nbsp;00:&nbsp;00</span></p>
+						</div>
+					
+					
+					
+				
+			
 		</div>
 
 		<!-- <form id="msform" method="post" action=""> ***removed: ask NC question about form****
 			<fieldset class="fieldset px-2"> -->
 
-		<div class="row bg-teal rounded-bottom p-2">
+		<div class="row bg-teal rounded-bottom p-1">
 			<!---Inner Row--->
 			<div class="col-6 mb-1 rounded-left" id="icon-bank">
 				<!---Outer Column--->
-				<div class="row p-2" id="deck1">
+				<div class="row p-1" id="deck1">
 					<!-- This <div>  is in JS code -->
 				</div>
 
@@ -250,7 +260,7 @@
 
 			<div class="col-6 mb-1 rounded-right" id="word-bank">
 				<!---Outer Column--->
-				<div class="row p-2" id="deck2">
+				<div class="row p-1" id="deck2">
 					<!-- This <div>  is in JS code -->
 					</div>
 				</div>
