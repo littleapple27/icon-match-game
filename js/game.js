@@ -2,17 +2,11 @@
 $(window).on('load', function () {
    $('#myModal').modal('show');
    loadGame();
-   $('.card-back').hover(
-				
-               function () {
-                  $(this).css({"border":"3px solid #7D07F2", "background-color":" rgba(125,7,242, 0.2)"});
-               }, 
-				
-               function () {
-                  $(this).css({"border":"none", "background-color":"#f2f2f2"});
-               }
-            );
 });
+
+/* Set value to 18 cards */
+var gameCards=18;
+var gameStarted=false;
 
 /* This is the array that contains the icon deck (32 icons) */
 var deck = [{
@@ -93,7 +87,7 @@ var deck = [{
    },
    {
       name: "fa-street-view",
-      target: "steet view"
+      target: "street view"
    },
    {
       name: "fa-th",
@@ -228,71 +222,13 @@ var deck2div = document.getElementById('deck2');
 var numMoves = 0;
 var totScore = 0;
 
-function loadGame() {
-   /* Set value to 18 cards */
-   var value = 18;
-   console.log(value);
-
-   /* Initialize the board*/
-   initializeBoard();
-   /* Shuffle the deck with 52 cards */
-   deck = shuffle(deck);
-   /* Populate the 2 decks with X cards based on 20 cards level */
-   for (i = 0; i < value; i++) {
-      deck1.push(deck[i].target)
-      deck2.push(deck[i].target);
-   }
-   console.log(deck1);
-   console.log(deck2);
-   /* Shuffle the second deck */
-   shuffle(deck2);
-   /* Add the cards to the webpage */
-   for (i = 0; i < value; i++) {
-      /* Create the image elements*/
-      card1 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-icon" data-target="' + deck1[i] + '"><i class="fas ' + deck[i].name + '  float-middle" data-target="' + deck1[i] + '"></i></div></div></div></div>';
-      card2 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip border-0 shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-text" data-target="' + deck2[i] + '">' + deck2[i] + '</div></div></div>';
-      /*Add information to the 2 decks */
-      deck1div.innerHTML += card1;
-      deck2div.innerHTML += card2;
-   }
-}
-
 
 /* Function to initialize a new game */
-function loadGame() {
-   /* Set value to 18 cards */
-   var value = 18;
-   console.log(value);
-
+function loadGame(){
    /* Initialize the board*/
-   initializeBoard();
-   /* Shuffle the deck with 52 cards */
-   deck = shuffle(deck);
-   /* Populate the 2 decks with X cards based on 20 cards level */
-   for (i = 0; i < value; i++) {
-      deck1.push(deck[i].target)
-      deck2.push(deck[i].target);
-   }
-   console.log(deck1);
-   console.log(deck2);
-   /* Shuffle the second deck */
-   shuffle(deck2);
-   /* Add the cards to the webpage */
-   for (i = 0; i < value; i++) {
-      /* Create the image elements*/
-      card1 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-icon" data-target="' + deck1[i] + '"><i class="fas ' + deck[i].name + '  float-middle" data-target="' + deck1[i] + '"></i></div></div></div></div>';
-      card2 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip border-0 shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-text" data-target="' + deck2[i] + '">' + deck2[i] + '</div></div></div>';
-      /*Add information to the 2 decks */
-      deck1div.innerHTML += card1;
-      deck2div.innerHTML += card2;
-   }
-}
-
-/* Clears all the elements when a new game is started */
-function initializeBoard() {
    /* Clear the content of the divs that hold the 2 decks */
-   deck1div.innerHTML = '';
-   deck2div.innerHTML = '';
+   $('#deck1').html('');
+   $('#deck2').html('');
    /* Clear the content of the 2 decks */
    deck1 = [];
    deck2 = [];
@@ -301,73 +237,85 @@ function initializeBoard() {
    /* Clear the variables that contain the cards that have been selected */
    deck1select = '';
    deck2select = '';
+   /* Shuffle the deck with 52 cards */
+   deck = shuffle(deck);
+   /* Populate the 2 decks with X cards based on 20 cards level */
+   for (i = 0; i < gameCards; i++) {
+      deck1.push(deck[i].target)
+      deck2.push(deck[i].target);
+   }
+   /* Shuffle the second deck */
+   shuffle(deck2);
+   /* Add the cards to the webpage */
+   for (i = 0; i < gameCards; i++){
+      /* Create the image elements*/
+	   $('#deck1').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down" data-deck="1" data-target="' + deck1[i] + '" data-icon="' + deck[i].name + '">?</div></div>');
+	   $('#deck2').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down" data-deck="2" data-target="' + deck2[i] + '" data-icon="' + deck[i].name + '">?</div></div>');
+   }
 }
 
+$(document).on('mouseover','.card',function(){
+	if(!gameStarted) return;
+	$(this).removeClass('card-hover').addClass('card-hover');
+});
+$(document).on('mouseout','.card',function(){
+	if(!gameStarted) return;
+	$(this).removeClass('card-hover');
+});
+
 /* When the user clicks on start game the cards flip over and the timer starts */
-function startGame() {
+function startGame(){
+	loadGame();
+	gameStarted=true;
    startTimer();
    $('.card-front').addClass('card-front-flip').removeClass('.card-front');
    $('.card-back').addClass('card-back-flip').removeClass('.card-back');
-   $('.start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay').removeClass("start-btn").addClass("replay-btn").attr("onclick","loadGame()");//NEED TO PROGRAM REPLAY FUNCTION 
+   $('.start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay');//NEED TO PROGRAM REPLAY FUNCTION 
 };
 
-
-
-/* When the user clicks on deck1 */
-deck1div.addEventListener('click', function (event) {
-   /* If the user clicks outside a card, don't do anything */
-   if (event.target.getAttribute('data-target') == undefined) return;
-   /* Check if the card has already been matched */
-   if (deckMatched.includes(event.target.getAttribute('data-card'))) return;
-
-   /* get the value of the card and set it as selected */
-   deck1select = event.target.getAttribute('data-target')
-   console.log("deck1select - " + deck1select);
-   console.log("deck2select - " + deck2select);
-
-   //INSERT CHANGE OF BG COLOR FUNCTION HERE i.e.
-   event.target.style.backgroundColor = "#eee";
-
-
-   if (deck2select.length > 0) {
-      checkMatch(event.target.getAttribute('data-target'));
-   }
-   console.log(event.target.getAttribute('data-target'));
-
-}); ///end of when user clicks on deck1   
-
-
-
-/* When the user clicks on deck2 */
-deck2div.addEventListener('click', function (event) {
-   console.log('deck2 clicked');
-
-   /* If the user clicks outside a card, don't do anything */
-   if (event.target.getAttribute('data-target') == undefined) return;
-
-   /* Check if the card has already been matched */
-   if (deckMatched.includes(event.target.getAttribute('data-target'))) return;
-
-   /* get the value of the card and set it as selected */
-   deck2select = event.target.getAttribute('data-target');
-   console.log("deck1select - " + deck1select);
-   console.log("deck2select - " + deck2select);
-
-
-
-   if (deck1select.length > 0) {
-      checkMatch(event.target.getAttribute('data-target'));
-   }
-   console.log(event.target.getAttribute('data-target'));
+$(document).on('click','.card',function(){
+	if(!gameStarted || $(this).hasClass('card-matched')) return;
+	if($(this).attr('data-deck')==1){
+		// click on deck1 
+		$('#deck1 .card').removeClass('card-click');
+		deck1select=$(this).attr('data-target');
+		$(this).removeClass('card-click').addClass('card-click');
+		if(deck2select.length>0){
+			checkMatch();
+		}
+	}else{
+		// click on deck2 
+		$('#deck2 .card').removeClass('card-click');
+		deck2select=$(this).attr('data-target');
+		$(this).removeClass('card-click').addClass('card-click');
+		if(deck1select.length>0){
+			checkMatch();
+		}
+	}
+	console.log($(this));
+	return;
 });
 
 
-function checkMatch(cardValue) {
+$(document).on('click','.start-btn',function(){
+   startGame();
+   $('.card').each(function(){
+	   if($(this).attr('data-deck')==1) $(this).html('<i class="mt-3 fa '+$(this).attr('data-icon')+'"></i>');
+	  else $(this).text($(this).attr('data-target'));
+	});
+   $('.card-down').addClass('card-up').removeClass('.card-down');
+   $('.card-down').addClass('card-up').removeClass('.card-down');
+});
+
+
+function checkMatch() {
    /* Add +1 to number of moves */
    if (deck2select == deck1select) {
       /* We have a match*/
       /* Add the cards to the matched array */
-      deckMatched.push(cardValue);
+      deckMatched.push(deck2select);
+	  $('#deck1 .card[data-target="'+deck1select+'"]').removeClass('card-click').addClass('card-matched');
+	  $('#deck2 .card[data-target="'+deck1select+'"]').removeClass('card-click').addClass('card-matched');
       console.log(deckMatched + "  winner winner chicken dinner");
       /* Add +1 to number of moves */
       numMoves = numMoves + 1;
@@ -389,6 +337,7 @@ function checkMatch(cardValue) {
       /* Clear the select cards */
       deck1select = '';
       deck2select = '';
+		$('.card').removeClass('card-click');
       console.log('deck2div - not matched');
       /* Flip the cards after 1500 milliseconds */
       // 		// setTimeout(function(){
@@ -442,14 +391,14 @@ function startTimer() {
       minutes = minutes + 1;
    }
    /* you use the javascript tenary operator to format how the minutes should look and add 0 to minutes if less than 10 */
-   mins = (minutes < 10) ? ('0' + minutes + ': ') : (minutes + ': ');
+   mins = (minutes < 10) ? ('0' + minutes + ':') : (minutes + ':');
    /* check if minutes is equal to 60 and add a +1 to hours set minutes to 0 */
    if (minutes === 60) {
       minutes = 0;
       hours = hours + 1;
    }
    /* you use the javascript tenary operator to format how the hours should look and add 0 to hours if less than 10 */
-   gethours = (hours < 10) ? ('0' + hours + ': ') : (hours + ': ');
+   gethours = (hours < 10) ? ('0' + hours + ':') : (hours + ':');
    secs = (seconds < 10) ? ('0' + seconds) : (seconds);
    // display the stopwatch 
    var time = gethours + mins + secs;

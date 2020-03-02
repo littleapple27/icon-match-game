@@ -17,7 +17,72 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/custom.min.css">
 	<title>The Unambiguous Icon Project: A Case for Universal Icon Meanings</title>
-
+	<style>
+		.card{cursor:pointer;}
+		.bigfont{
+			font-family: 'Open Sans Condensed', sans-serif !important;
+			font-size:1.5rem !important;
+			font-weight:bold !important;
+		}
+		.lead{
+			font-size:1.5rem !important;
+			font-weight:bold;
+		}
+		.card{
+			font-size:3em;
+			text-align:center;
+			line-height:4.5rem;
+			 margin: auto;
+		}
+		.card-down{
+			color:#FC0;
+			background-color:#0c9;
+			font-family: 'Bangers', sans-serif;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border:5px solid #0c9 !important;
+			 box-sizing: border-box;
+		}
+		.card-up{
+			font-size:2em;
+			text-align:center;
+			line-height:2.5rem;
+			 margin: auto;
+			background-color:#ddd;
+			color:#000;
+			border:5px solid #ddd !important;
+		}
+		#deck2 .card-up{
+			padding-top:0.9em;
+			font-size:1.5em;
+			text-align:center;
+			line-height:1.3rem;
+			margin: auto;
+		}
+		.card-hover{
+			border:5px solid rgba(125,7,242,0.75) !important;
+		}
+		.card-select{
+			border:5px solid rgba(125,7,242,0.75) !important;
+		}
+		.btn-info-submit{
+			color:#FC0;
+			font-family: 'Bangers', sans-serif;
+		}
+		.btn-info-submit:hover{
+			color:#FFF;
+		}
+		.card-click{
+			color: rgba(125,7,242,0.75);
+			border:5px solid rgba(125,7,242,0.75) !important;
+			background-color:#EFE0FE;
+		}
+		.card-matched{
+			background-color:#ddd;
+			color:#999;
+			border:5px solid #ddd !important;
+			cursor:default;
+		}
+	</style>
 </head>
 
 <body class="bg-dark">
@@ -25,9 +90,9 @@
 	<!---- Demographic Form Pop-Up Modal on Page Load---->
 	<section id="myModal" class="modal fade">
 		<div class="modal-dialog">
-			<div class="modal-content bg-purple text">
+			<div class="modal-content bg-light text">
 				<div class="modal-header">
-					<p class="lead">You have been invited to participate in a icon&nbsp;<span class="text-purple"><i class="fas fa-arrow-right"></i></span>&nbsp;word matching game designed for research. To get started, please fill out the following information.</p>
+					<h5 class="modal-title bigfont">Please fill out the following information</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -49,7 +114,7 @@
 
 
 						<div class="">
-							<p>&nbsp; and on my last birthday, I turned &nbsp;
+							<p>An my last birthday, I turned &nbsp;
 								<select class="form-control" id="age" name="age" required>
 									<option value="" disabled selected hidden>Please select age
 									</option>
@@ -180,9 +245,10 @@
 								</select>
 							</p>
 						</div>
-
-						<button type="submit" name="submit" value="submit" class="btn btn-lg btn-teal" id="lets-play-btn">Let's
+						<div class="text-right">
+						<button type="submit" name="submit" value="submit" class="btn btn-lg bg-purple btn-info-submit" id="lets-play-btn">Let's
 							Play!&nbsp;&nbsp;<i class="fas fa-angle-double-right"></i></button>
+							</div>
 					</form>
 				</div>
 			</div>
@@ -190,25 +256,12 @@
 	</section>
 
 
-	<header class="container-fluid bg-dark py-1 text-right shadow">
-		<!-- Image and text -->
-		<nav class="d-flex flex-row justify-content-end align-items-center">
-			<a class="navbar-brand text-teal align-items-center" href="mailto:amlegleiter@mail.fhsu.edu">
-				<i class="fas fa-envelope"></i>&nbsp;<span class="text-sm"></span>
-			</a>
-		</nav>
-
-	</header>
-
-
 	<section class="container py-4 mb-0">
 		
-		<h1 class="display-4 text-teal text-shadow">Icon <span class="text-yellow"><i class="fas fa-arrow-right"></i></span> Word Match Game</h1>
-		<p class="text-white p-2 rounded">
-			Directions: Click on an icon to highlight it.  Then, click on a word that matches the meaning or function of the icon. +1,000 points for every correct match, -250 points for incorrect matches. The game is over when all of the cards are matched. Good Luck!
-		</p>
-
-
+		<h1 class="display-4 text-teal text-shadow text-center text-yellow">Icon <i class="fas fa-arrow-right"></i> Word Match Game</h1>
+		<p class="text-white lead text-center">
+			Click on an icon and then on a word that matches the meaning or function of the icon.</p>
+			<p class="text-white text-center">+1,000 points for every correct match, -250 points for incorrect matches. The game ends when all of the cards are matched!</p>
 
 	</section>
 
@@ -219,20 +272,20 @@
 				
 					
 					<div class="m-1 align-content-sm-stretch flex-fill">
-							<button class="btn btn-md btn-purple start-btn btn-block" onclick="startGame();"><i class="fa fa-play"></i>&nbsp;Play game</button>
+							<button class="btn btn-md btn-purple start-btn btn-block bigfont"><i class="fa fa-play"></i>&nbsp;Start game</button>
 						</div>
 			
 				
 		
 						
-						<div class="outline-teal m-1 p-1  align-content-sm-stretch flex-fill d-flex align-items-center justify-content-center"><p class="text-yellow mb-0">
+						<div class="outline-teal m-1 p-1  align-content-sm-stretch flex-fill d-flex align-items-center justify-content-center bigfont"><p class="text-yellow mb-0 bigfont">
 							<i class="fa fa-star"></i>&nbsp;<span class="score text-purple">00000</span></p>
 						</div>
-						<div class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center"><p class="text-teal  mb-0"><i class="fas fa-chess"></i>&nbsp;
+						<div class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center bigfont"><p class="text-teal  mb-0 bigfont"><i class="fas fa-chess"></i>&nbsp;
 							<span class="moves text-purple">0</span></p>
 						</div>
-						<div class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center"><p class="mb-0">
-							<span class="timer text-purple"><i class="fas fa-stopwatch"></i>&nbsp;00:&nbsp;00:&nbsp;00</span></p>
+						<div class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center bigfont"><p class="mb-0 bigfont">
+							<span class="timer text-purple"><i class="fas fa-stopwatch"></i>&nbsp;00:00:00</span></p>
 						</div>
 					
 					
@@ -276,19 +329,15 @@
 
 	</section>
 
-	<footer class="container-fluid top-shadow py-2 mt-5 bg-dark" id="">
-			<div class="d-flex flex-column justify-content-center px-2 mb-2 text-sm text-left text-light m-0 ">
-				<div>Disclaimer: The data collected by the page could be published in aggregate form to help understand use of icons and to improve the understanding and usability of icons in web-based UI development.</div>
-				<div>&copy; 2019 amlegleiter@mail.fhsu.edu</div>
-	</footer>
-
+	<section class="mt-4 mb-2 text-center text-white text-small">
+		<div>Disclaimer: The data collected by the page could be published in aggregate form to help understand use of icons and to improve the understanding and usability of icons in web-based UI development.</div>
+		<div>&copy; 2019 <a href="mailto:amlegleiter@mail.fhsu.edu"> amlegleiter@mail.fhsu.edu  <i class="fas fa-envelope"></i></a></div>
+	</section>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
 	</script>
 	<script src="js/shuffle.js"></script>
 	<script src="js/game.js"></script>
-
-
 </body>
 
 </html>
