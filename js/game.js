@@ -368,7 +368,7 @@ function replayGame() {
    setTimeout(function () {
       /* Quick TimeOut to show card down, then flip to card up */
       $('.card').each(function () {
-         if ($(this).attr('data-deck') == 1) $(this).html('<i class="mt-3 ' + $(this).attr('data-icon') + '"></i>');
+         if ($(this).attr('data-deck') == 1) $(this).html('<i class="' + $(this).attr('data-icon') + '"></i>');
          else $(this).text($(this).attr('data-target'));
       });
       $('.card-down').addClass('card-up').removeClass('.card-down');
