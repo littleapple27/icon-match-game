@@ -2,213 +2,207 @@
 $(window).on('load', function () {
    $('#myModal').modal('show');
    loadGame();
-   $('.card-back').hover(
-				
-               function () {
-                  $(this).css({"border":"3px solid #7D07F2", "background-color":" rgba(125,7,242, 0.2)"});
-               }, 
-				
-               function () {
-                  $(this).css({"border":"none", "background-color":"#f2f2f2"});
-               }
-            );
 });
+
+/* Set value to 18 cards */
+var gameCards = 18;
+var gameStarted = false;
 
 /* This is the array that contains the icon deck (32 icons) */
 var deck = [{
-      name: "fa-bolt",
+      name: "fas fa-bolt",
       target: "flash"
    },
    {
-      name: "fa-bookmark",
+      name: "far fa-bookmark",
       target: "bookmark"
    },
    {
-      name: "fa-video",
+      name: "fas fa-video",
       target: "video"
    },
    {
-      name: "fa-bullhorn",
+      name: "fas fa-bullhorn",
       target: "announcement"
    },
    {
-      name: "fa-cloud-upload-alt",
+      name: "fas fa-cloud-upload-alt",
       target: "cloud upload"
    },
    {
-      name: "fa-compress",
+      name: "fas fa-compress",
       target: "minimize"
    },
    {
-      name: "fa-concierge-bell",
+      name: "fas fa-concierge-bell",
       target: "request service"
    },
    {
-      name: "fa-credit-card",
+      name: "far fa-credit-card",
       target: "payment"
    },
    {
-      name: "fa-directions",
+      name: "fas fa-directions",
       target: "direction"
    },
    {
-      name: "fa-donate",
+      name: "fas fa-donate",
       target: "donate"
    },
    {
-      name: "fa-exchange-alt",
+      name: "fas fa-exchange-alt",
       target: "exchange"
    },
    {
-      name: "fa-expand",
+      name: "fas fa-expand",
       target: "expand"
    },
    {
-      name: "fa-external-link-alt",
+      name: "fas fa-external-link-alt",
       target: "external link"
    },
    {
-      name: "fa-eye",
+      name: "far fa-eye",
       target: "visibile"
    },
    {
-      name: "fa-grip-lines",
+      name: "fas fa-grip-lines",
       target: "grip lines"
    },
    {
-      name: "fa-life-ring",
+      name: "far fa-life-ring",
       target: "help & support"
    },
    {
-      name: "fa-location-arrow",
+      name: "fas fa-location-arrow",
       target: "location arrow"
    },
    {
-      name: "fa-lock",
+      name: "fas fa-lock",
       target: "security"
    },
    {
-      name: "fa-moon",
+      name: "fas far fa-moon",
       target: "sleep mode"
    },
    {
-      name: "fa-street-view",
-      target: "steet view"
+      name: "fas fa-street-view",
+      target: "street view"
    },
    {
-      name: "fa-th",
+      name: "fas fa-th",
       target: "table view"
    },
    {
-      name: "fa-address-book",
+      name: "far fa-address-book",
       target: "contacts"
    },
    {
-      name: "fa-archive",
+      name: "fas fa-archive",
       target: "archive"
    },
    {
-      name: "fa-bus",
+      name: "fas fa-bus",
       target: "bus route"
    },
    {
-      name: "fa-calendar-alt",
+      name: "far fa-calendar-alt",
       target: "calendar"
    },
    {
-      name: "fa-clipboard",
+      name: "far fa-clipboard",
       target: "clipboard"
    },
    {
-      name: "fa-clone",
+      name: "far fa-clone",
       target: "clone"
    },
    {
-      name: "fa-money-bill",
+      name: "fas fa-money-bill",
       target: "money"
    },
    {
-      name: "fa-paste",
+      name: "fas fa-paste",
       target: "paste"
    },
    {
-      name: "fa-power-off",
+      name: "fas fa-power-off",
       target: "power"
    },
    {
-      name: "fa-trash-alt",
+      name: "fas fa-trash-alt",
       target: "delete"
    },
    {
-      name: "fa-wifi",
+      name: "fas fa-wifi",
       target: "wifi"
    },
    {
-      name: "fa-bars",
+      name: "fas fa-bars",
       target: "menu"
    },
    {
-      name: "fa-bell",
+      name: "far fa-bell",
       target: "notifications"
    },
    {
-      name: "fa-camera",
+      name: "fas fa-camera",
       target: "images"
    },
    {
-      name: "fa-cog",
+      name: "fas fa-cog",
       target: "settings"
    },
    {
-      name: "fa-comment-alt",
+      name: "far fa-comment-alt",
       target: "comments"
    },
    {
-      name: "fa-download",
+      name: "fas fa-download",
       target: "file download"
    },
    {
-      name: "fa-ellipsis-h",
+      name: "fas fa-ellipsis-h",
       target: "more"
    },
    {
-      name: "fa-globe",
+      name: "fas fa-globe",
       target: "language settings"
    },
    {
-      name: "fa-heart",
+      name: "far fa-heart",
       target: "favorite"
    },
    {
-      name: "fa-sign-in-alt",
+      name: "fas fa-sign-in-alt",
       target: "sign-in"
    },
    {
-      name: "fa-map-marker-alt",
+      name: "fas fa-map-marker-alt",
       target: "location marker"
    },
    {
-      name: "fa-pencil-alt",
+      name: "fas fa-pencil-alt",
       target: "edit"
    },
    {
-      name: "fa-search",
+      name: "fas fa-search",
       target: "search"
    },
    {
-      name: "fa-share-alt",
+      name: "fas fa-share-alt",
       target: "share"
    },
    {
-      name: "fa-shopping-cart",
+      name: "fas fa-shopping-cart",
       target: "shopping cart"
    },
    {
-      name: "fa-star",
+      name: "fas fa-star",
       target: "ratings"
    },
    {
-      name: "fa-user",
+      name: "far fa-user",
       target: "user"
    }
 ];
@@ -228,71 +222,13 @@ var deck2div = document.getElementById('deck2');
 var numMoves = 0;
 var totScore = 0;
 
-function loadGame() {
-   /* Set value to 18 cards */
-   var value = 18;
-   console.log(value);
-
-   /* Initialize the board*/
-   initializeBoard();
-   /* Shuffle the deck with 52 cards */
-   deck = shuffle(deck);
-   /* Populate the 2 decks with X cards based on 20 cards level */
-   for (i = 0; i < value; i++) {
-      deck1.push(deck[i].target)
-      deck2.push(deck[i].target);
-   }
-   console.log(deck1);
-   console.log(deck2);
-   /* Shuffle the second deck */
-   shuffle(deck2);
-   /* Add the cards to the webpage */
-   for (i = 0; i < value; i++) {
-      /* Create the image elements*/
-      card1 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-icon" data-target="' + deck1[i] + '"><i class="fas ' + deck[i].name + '  float-middle" data-target="' + deck1[i] + '"></i></div></div></div></div>';
-      card2 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip border-0 shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-text" data-target="' + deck2[i] + '">' + deck2[i] + '</div></div></div>';
-      /*Add information to the 2 decks */
-      deck1div.innerHTML += card1;
-      deck2div.innerHTML += card2;
-   }
-}
-
 
 /* Function to initialize a new game */
 function loadGame() {
-   /* Set value to 18 cards */
-   var value = 18;
-   console.log(value);
-
    /* Initialize the board*/
-   initializeBoard();
-   /* Shuffle the deck with 52 cards */
-   deck = shuffle(deck);
-   /* Populate the 2 decks with X cards based on 20 cards level */
-   for (i = 0; i < value; i++) {
-      deck1.push(deck[i].target)
-      deck2.push(deck[i].target);
-   }
-   console.log(deck1);
-   console.log(deck2);
-   /* Shuffle the second deck */
-   shuffle(deck2);
-   /* Add the cards to the webpage */
-   for (i = 0; i < value; i++) {
-      /* Create the image elements*/
-      card1 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-icon" data-target="' + deck1[i] + '"><i class="fas ' + deck[i].name + '  float-middle" data-target="' + deck1[i] + '"></i></div></div></div></div>';
-      card2 = '<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-flip border-0 shadow"><div class="card-front text-white bg-lt-teal"><div class=" noselect card-body p-0 d-flex align-items-center justify-content-center"><i class="fa fa-question fa-1x float-middle"></i></div></div><div class="noselect card-back p-0 d-flex align-items-center justify-content-center" id="back-text" data-target="' + deck2[i] + '">' + deck2[i] + '</div></div></div>';
-      /*Add information to the 2 decks */
-      deck1div.innerHTML += card1;
-      deck2div.innerHTML += card2;
-   }
-}
-
-/* Clears all the elements when a new game is started */
-function initializeBoard() {
    /* Clear the content of the divs that hold the 2 decks */
-   deck1div.innerHTML = '';
-   deck2div.innerHTML = '';
+   $('#deck1').html('');
+   $('#deck2').html('');
    /* Clear the content of the 2 decks */
    deck1 = [];
    deck2 = [];
@@ -301,73 +237,82 @@ function initializeBoard() {
    /* Clear the variables that contain the cards that have been selected */
    deck1select = '';
    deck2select = '';
+   /* Shuffle the deck with 52 cards */
+   deck = shuffle(deck);
+   /* Populate the 2 decks with X cards based on 20 cards level */
+   for (i = 0; i < gameCards; i++) {
+      deck1.push(deck[i].target)
+      deck2.push(deck[i].target);
+   }
+   /* Shuffle the second deck */
+   shuffle(deck2);
+   /* Add the cards to the webpage */
+   for (i = 0; i < gameCards; i++) {
+      /* Create the image elements*/
+      $('#deck1').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down" data-deck="1" data-target="' + deck1[i] + '" data-icon="' + deck[i].name + '">?</div></div>');
+      $('#deck2').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down d-flex justify-content-center" data-deck="2" data-target="' + deck2[i] + '" data-icon="' + deck[i].name + '">?</div></div>');
+   }
 }
+
+$(document).on('mouseover', '.card', function () {
+   if (!gameStarted) return;
+   $(this).removeClass('card-hover').addClass('card-hover');
+});
+$(document).on('mouseout', '.card', function () {
+   if (!gameStarted) return;
+   $(this).removeClass('card-hover');
+});
 
 /* When the user clicks on start game the cards flip over and the timer starts */
 function startGame() {
+   gameStarted = true;
    startTimer();
-   $('.card-front').addClass('card-front-flip').removeClass('.card-front');
-   $('.card-back').addClass('card-back-flip').removeClass('.card-back');
-   $('.start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay').removeClass("start-btn").addClass("replay-btn").attr("onclick","loadGame()");//NEED TO PROGRAM REPLAY FUNCTION 
+   $('.start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay').removeClass("start-btn").addClass("replay-btn").attr("onclick", "replayGame()");
+   //NEED TO PROGRAM REPLAY FUNCTION 
 };
 
-
-
-/* When the user clicks on deck1 */
-deck1div.addEventListener('click', function (event) {
-   /* If the user clicks outside a card, don't do anything */
-   if (event.target.getAttribute('data-target') == undefined) return;
-   /* Check if the card has already been matched */
-   if (deckMatched.includes(event.target.getAttribute('data-card'))) return;
-
-   /* get the value of the card and set it as selected */
-   deck1select = event.target.getAttribute('data-target')
-   console.log("deck1select - " + deck1select);
-   console.log("deck2select - " + deck2select);
-
-   //INSERT CHANGE OF BG COLOR FUNCTION HERE i.e.
-   event.target.style.backgroundColor = "#eee";
-
-
-   if (deck2select.length > 0) {
-      checkMatch(event.target.getAttribute('data-target'));
+$(document).on('click', '.card', function () {
+   if (!gameStarted || $(this).hasClass('card-matched')) return;
+   if ($(this).attr('data-deck') == 1) {
+      // click on deck1 
+      $('#deck1 .card').removeClass('card-click');
+      deck1select = $(this).attr('data-target');
+      $(this).removeClass('card-click').addClass('card-click');
+      if (deck2select.length > 0) {
+         checkMatch();
+      }
+   } else {
+      // click on deck2 
+      $('#deck2 .card').removeClass('card-click');
+      deck2select = $(this).attr('data-target');
+      $(this).removeClass('card-click').addClass('card-click');
+      if (deck1select.length > 0) {
+         checkMatch();
+      }
    }
-   console.log(event.target.getAttribute('data-target'));
-
-}); ///end of when user clicks on deck1   
-
-
-
-/* When the user clicks on deck2 */
-deck2div.addEventListener('click', function (event) {
-   console.log('deck2 clicked');
-
-   /* If the user clicks outside a card, don't do anything */
-   if (event.target.getAttribute('data-target') == undefined) return;
-
-   /* Check if the card has already been matched */
-   if (deckMatched.includes(event.target.getAttribute('data-target'))) return;
-
-   /* get the value of the card and set it as selected */
-   deck2select = event.target.getAttribute('data-target');
-   console.log("deck1select - " + deck1select);
-   console.log("deck2select - " + deck2select);
-
-
-
-   if (deck1select.length > 0) {
-      checkMatch(event.target.getAttribute('data-target'));
-   }
-   console.log(event.target.getAttribute('data-target'));
+   console.log($(this));
+   return;
 });
 
 
-function checkMatch(cardValue) {
-   /* Add +1 to number of moves */
+$(document).on('click', '.start-btn', function () {
+   startGame();
+   $('.card').each(function () {
+      if ($(this).attr('data-deck') == 1) $(this).html('<i class="' + $(this).attr('data-icon') + '"></i>');
+      else $(this).text($(this).attr('data-target'));
+   });
+   $('.card-down').addClass('card-up').removeClass('.card-down');
+   $('.card-down').addClass('card-up').removeClass('.card-down');
+});
+
+
+function checkMatch() {
    if (deck2select == deck1select) {
       /* We have a match*/
       /* Add the cards to the matched array */
-      deckMatched.push(cardValue);
+      deckMatched.push(deck2select);
+      $('#deck1 .card[data-target="' + deck1select + '"]').removeClass('card-click').addClass('card-matched');
+      $('#deck2 .card[data-target="' + deck1select + '"]').removeClass('card-click').addClass('card-matched');
       console.log(deckMatched + "  winner winner chicken dinner");
       /* Add +1 to number of moves */
       numMoves = numMoves + 1;
@@ -389,14 +334,8 @@ function checkMatch(cardValue) {
       /* Clear the select cards */
       deck1select = '';
       deck2select = '';
+      $('.card').removeClass('card-click');
       console.log('deck2div - not matched');
-      /* Flip the cards after 1500 milliseconds */
-      // 		// setTimeout(function(){
-      // 		// 	/* Flip the card that haven't been matched */
-      // 		// 	flipUnmatchedCards('deck1',back='red_back');
-      // 		// 	flipUnmatchedCards('deck2',back='yellow_back');
-      // 		// },1000);
-      // 	}
    }
 }
 
@@ -404,28 +343,42 @@ function checkMatch(cardValue) {
 function checkEndgame() {
    setTimeout(function () {
       /*Display congratulations message */
-      if (deck1.length == deckMatched.length) alert('Congratulations! You\'ve matched all of the icons!');
+      if (deck1.length == deckMatched.length) {
+         alert('Congratulations! You\'ve matched all of the icons!');
+         stopTimer();
+      }
    }, 2000);
 }
 
-
-/* Flip all the cards that have not been matched yet */
-function matchedCards(deck) {
-   /* Select one of the two decks */
-   var deck = document.getElementById(deck);
-   /* Select all the cards in the deck */
-   var cards = deck.getElementsByClassName('card-back');
-   var currentCard;
-   /* Color all the cards */
-   for (i = 0; i < cards.length; i++) {
-      /* Get value of the card */
-      currentCard = cards[i].getAttribute('data-card');
-      if (!deckMatched.includes(currentCard))
-         /* Check if the card has been matched so that we don't color it */
-         currentCard = cards[i].style.backgroundColor = "#f2f2f2";
-   }
-}
-
+// Click event to replay the game
+function replayGame() {
+   stopTimer();
+   loadGame();
+   gameStarted = true;
+   /* Reset score section variables to 0 */
+   seconds = 0;
+   minutes = 0;
+   hours = 0;
+   totScore = 0;
+   numMoves = 0;
+   $('.score-section').find('.timer').html('<i class="fas fa-stopwatch"></i>&nbsp;00:00:00');
+   $('.score-section').find('.score').html('00000');
+   $('.score-section').find('.moves').html('0');
+   /* setTimeOut to show card down, then flip to show card up */
+   setTimeout(function () {
+      /* Quick TimeOut to show card down, then flip to card up */
+      $('.card').each(function () {
+         if ($(this).attr('data-deck') == 1) $(this).html('<i class="mt-3 ' + $(this).attr('data-icon') + '"></i>');
+         else $(this).text($(this).attr('data-target'));
+      });
+      $('.card-down').addClass('card-up').removeClass('.card-down');
+      $('.card-down').addClass('card-up').removeClass('.card-down');
+   }, 1000);
+   /* Allows for the time to start correctly */
+   setTimeout(function () {
+      startTime()
+   }, 1000);
+};
 
 /* Function to start timer */
 var clearTime;
@@ -442,14 +395,14 @@ function startTimer() {
       minutes = minutes + 1;
    }
    /* you use the javascript tenary operator to format how the minutes should look and add 0 to minutes if less than 10 */
-   mins = (minutes < 10) ? ('0' + minutes + ': ') : (minutes + ': ');
+   mins = (minutes < 10) ? ('0' + minutes + ':') : (minutes + ':');
    /* check if minutes is equal to 60 and add a +1 to hours set minutes to 0 */
    if (minutes === 60) {
       minutes = 0;
       hours = hours + 1;
    }
    /* you use the javascript tenary operator to format how the hours should look and add 0 to hours if less than 10 */
-   gethours = (hours < 10) ? ('0' + hours + ': ') : (hours + ': ');
+   gethours = (hours < 10) ? ('0' + hours + ':') : (hours + ':');
    secs = (seconds < 10) ? ('0' + seconds) : (seconds);
    // display the stopwatch 
    var time = gethours + mins + secs;
@@ -462,7 +415,7 @@ function startTimer() {
 // Function used to start the timer
 function startTime() {
    /* check if seconds, minutes, and hours are equal to zero and start the timer*/
-   if (seconds === 0 && minutes === 0 && hours === 0) {
+   if (seconds == 0 && minutes == 0 && hours == 0) {
       startTimer();
    }
 }
@@ -473,7 +426,7 @@ function stopTimer() {
    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
       /* display the full time before reseting the stop watch */
       var time = gethours + mins + secs;
-      $('.score-section').find('.timer').html(time);
+      $('.score-section').find('.timer').html('<i class="fas fa-stopwatch"></i> ' + time);
       /*Add the time,moves and star rating to the congratulation modal only after game is complete*/
       //  var StarsModalElem=$('.modal-element').eq(2);
       //  var MovesModalElem=$('.modal-element').eq(1);
@@ -488,7 +441,7 @@ function stopTimer() {
 //Timer code end
 
 
-// 	/****** Exit Message ******/
-// 	$(window).bind('beforeunload', function(){
-// 		return 'Are you sure you want to leave?';
-// 	});
+/****** Exit Message ******/
+$(window).bind('beforeunload', function () {
+   return 'Are you sure you want to leave?';
+});
