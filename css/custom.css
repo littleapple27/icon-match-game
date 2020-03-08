@@ -27,8 +27,16 @@
   background-color: #38cccc;
 }
 
+.bg-lt-teal {
+  background-color: #3dd9d9;
+}
+
 .bg-purple {
   background-color: #7d07f2;
+}
+
+.bg-dark {
+  background-color: #100e17 !important;
 }
 
 .btn-purple {

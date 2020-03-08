@@ -122,7 +122,7 @@
 <body class="bg-dark">
 
 	<!----Demographic Form Pop-Up Modal on Page Load---->
-	<section id="myModal" class="modal fade">
+	<section id="demoModal" class="modal fade" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog">
 			<div class="modal-content bg-light text">
 				<div class="modal-header">
@@ -309,8 +309,8 @@
 
 
 			<div class="m-1 align-content-sm-stretch flex-fill">
-				<button class="btn btn-md btn-purple start-btn btn-block bigfont"><i class="fa fa-play"></i>&nbsp;Start
-					game</button>
+				<button class="btn btn-md btn-purple start-btn btn-block bigfont text-yellow">Start
+					Game<i class="ml-3 fa fa-play"></i></button>
 			</div>
 
 
@@ -319,17 +319,17 @@
 			<div
 				class="outline-teal m-1 p-1  align-content-sm-stretch flex-fill d-flex align-items-center justify-content-center bigfont">
 				<p class="text-yellow mb-0 bigfont">
-					<i class="fa fa-star"></i>&nbsp;<span class="score text-purple">00000</span></p>
+					<i class="fa fa-star mr-2"></i><span class="score text-purple">00000</span></p>
 			</div>
 			<div
 				class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center bigfont">
-				<p class="text-teal  mb-0 bigfont"><i class="fas fa-chess"></i>&nbsp;
+				<p class="text-teal  mb-0 bigfont"><i class="fas fa-chess mr-2"></i>&nbsp;
 					<span class="moves text-purple">0</span></p>
 			</div>
 			<div
 				class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center bigfont">
-				<p class="mb-0 bigfont">
-					<span class="timer text-purple"><i class="fas fa-stopwatch"></i>&nbsp;00:00:00</span></p>
+				<p class="mb-0 bigfont text-purple">
+					<i class="fas fa-stopwatch mr-2"></i><span class="timer">00:00:00</span></p>
 			</div>
 
 
@@ -349,8 +349,6 @@
 					<!-- This <div>  is in JS code -->
 				</div>
 
-
-
 				<!---Inner Deck Row--->
 			</div>
 			<!---Inner Column--->
@@ -369,11 +367,62 @@
 
 	</section>
 
+	<!-- End of Game Modal -->
+	<div class="modal fade" id="endGameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content bg-light">
+				<div class="text-center pt-3">
+					<h2 class="modal-title text-purple" id="exampleModalLabel">Congratulations <i
+							class="fa fa-arrow-right"></i> You Win!</h2>
+					<p class="lead">You matched all of the icons!</p>
+					<!--- Remove button on final --->
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+
+					<div class="bg-white text-purple border mx-5 py-1">
+						<div class="modal-element text-center bigfont mb-2">
+							<i class="mr-2 fas fa-stopwatch"></i><span>Time :</span>
+						</div>
+						<div class="modal-element text-center bigfont mb-2">
+							<span class="text-teal"><i class="mr-2 fas fa-chess"></i></span><span>Moves :</span>
+						</div>
+						<div class="modal-element text-center bigfont mb-2">
+							<span class="text-yellow"><i class="mr-2 fas fa-star"></i></span><span> Score :</span>
+						</div>
+					</div>
+
+				</div>
+				<div class="bg-light">
+					<div class="py-4 d-flex flex-row justify-content-around">
+						<button class="btn btn-md bg-purple btn-info-submit text-uppercase">Leaderboard&nbsp;&nbsp;<i
+								class="fas fa-trophy"></i></button>
+						<button class="btn btn-md bg-purple btn-info-submit text-uppercase playAgain-btn">Play
+							Again&nbsp;&nbsp;<i class="fas fa-gamepad"></i></button>
+						<button class="btn btn-md bg-purple btn-info-submit text-uppercase newPlayer-btn">New
+							Player&nbsp;&nbsp;<i class="fas fa-user"></i></button>
+					</div>
+					<!--End of button flex group-->
+					<div class="py-2 text-center bg-purple text-white text-uppercase">Thank you for playing!</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<footer class="p-4 text-center text-white text-small">
 		<div>Disclaimer: The data collected by the page could be published in aggregate form to help understand the use
 			of icons to improve end-user comprehension and usability in web-based UI development.</div>
+
 		<div>&copy; 2019 <a href="mailto:amlegleiter@mail.fhsu.edu" class="text-teal"> amlegleiter@mail.fhsu.edu<i
-					class="ml-2 fas fa-envelope"></i></a></div>
+					class="ml-2 fas fa-envelope"></i></a><a class="text-teal"
+				href="https://github.com/littleapple27/case-for-universal-meanings" target="_blank"><i
+					class="fab fa-github ml-2"></i></a><a class="text-teal"
+				href="https://www.researchgate.net/publication/339004734_Flat-Design_Icon_Sets_a_Case_for_Universal_Meanings"><i
+					class="fab fa-researchgate ml-2"></i></a></div>
 	</footer>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">

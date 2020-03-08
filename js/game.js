@@ -1,6 +1,6 @@
 /* Method to show demographic form on page load */
 $(window).on('load', function () {
-   $('#myModal').modal('show');
+   $('#demoModal').modal('show');
    loadGame();
 });
 
@@ -43,7 +43,7 @@ var deck = [{
    },
    {
       name: "fas fa-directions",
-      target: "direction"
+      target: "directions"
    },
    {
       name: "fas fa-donate",
@@ -51,7 +51,7 @@ var deck = [{
    },
    {
       name: "fas fa-exchange-alt",
-      target: "exchange"
+      target: "swap"
    },
    {
       name: "fas fa-expand",
@@ -135,7 +135,7 @@ var deck = [{
    },
    {
       name: "fas fa-wifi",
-      target: "wifi"
+      target: "connectivity"
    },
    {
       name: "fas fa-bars",
@@ -147,7 +147,7 @@ var deck = [{
    },
    {
       name: "fas fa-camera",
-      target: "images"
+      target: "take photo"
    },
    {
       name: "fas fa-cog",
@@ -163,7 +163,7 @@ var deck = [{
    },
    {
       name: "fas fa-ellipsis-h",
-      target: "more"
+      target: "more options"
    },
    {
       name: "fas fa-globe",
@@ -267,8 +267,13 @@ $(document).on('mouseout', '.card', function () {
 function startGame() {
    gameStarted = true;
    startTimer();
-   $('.start-btn').html('<i class="fa fa-repeat"></i>&nbsp;&nbsp;Replay').removeClass("start-btn").addClass("replay-btn").attr("onclick", "replayGame()");
-   //NEED TO PROGRAM REPLAY FUNCTION 
+   $('.start-btn').html('<i class="mr-2 fa fa-repeat"></i>Restart').removeClass("start-btn").addClass("restart-btn").attr("onclick", "restartGame()");
+};
+
+function npStartGame() {
+   gameStarted = true;
+   startTimer();
+   $('.start-btn').html('<i class="mr-2 fa fa-repeat"></i>Restart').removeClass("start-btn").addClass("restart-btn").attr("onclick", "restartGame()");
 };
 
 $(document).on('click', '.card', function () {
@@ -294,8 +299,9 @@ $(document).on('click', '.card', function () {
    return;
 });
 
-
+/*** Game Start Button On Click ***/
 $(document).on('click', '.start-btn', function () {
+   console.log('check for new player');
    startGame();
    $('.card').each(function () {
       if ($(this).attr('data-deck') == 1) $(this).html('<i class="' + $(this).attr('data-icon') + '"></i>');
@@ -305,6 +311,16 @@ $(document).on('click', '.start-btn', function () {
    $('.card-down').addClass('card-up').removeClass('.card-down');
 });
 
+/*** Play Again Button On Click ***/
+$(document).on('click', '.playAgain-btn', function () {
+   $('#endGameModal').modal('hide');
+   restartGame();
+});
+
+$(document).on('click', '.newPlayer-btn', function () {
+   $('#endGameModal').modal('hide');
+   newPlayer();
+});
 
 function checkMatch() {
    if (deck2select == deck1select) {
@@ -344,15 +360,23 @@ function checkEndgame() {
    setTimeout(function () {
       /*Display congratulations message */
       if (deck1.length == deckMatched.length) {
-         alert('Congratulations! You\'ve matched all of the icons!');
-         stopTimer();
+         $('#endGameModal').modal('show');
       }
-   }, 2000);
+   }, 1000);
+
+   /* Moves first instance of clone() to model-element */
+   if (deck1.length == deckMatched.length) {
+      stopTimer();
+      var scoreModalElem = $('.modal-element').eq(2);
+      var movesModalElem = $('.modal-element').eq(1);
+      var timerModalElem = $('.modal-element').eq(0);
+      $('.score:first').clone().removeClass('score').addClass('cloned').appendTo(scoreModalElem);
+      $('.moves:first').clone().removeClass('moves').addClass('cloned').appendTo(movesModalElem);
+      $('.timer:first').clone().removeClass('timer').addClass('cloned').appendTo(timerModalElem);
+   }
 }
 
-// Click event to replay the game
-function replayGame() {
-   stopTimer();
+function restartGame() {
    loadGame();
    gameStarted = true;
    /* Reset score section variables to 0 */
@@ -361,9 +385,11 @@ function replayGame() {
    hours = 0;
    totScore = 0;
    numMoves = 0;
-   $('.score-section').find('.timer').html('<i class="fas fa-stopwatch"></i>&nbsp;00:00:00');
+   $('.score-section').find('.timer').html('00:00:00');
    $('.score-section').find('.score').html('00000');
    $('.score-section').find('.moves').html('0');
+   /* Remove the cloned score, timer, and moves span to prevent duplicates */
+   $('.cloned').remove();
    /* setTimeOut to show card down, then flip to show card up */
    setTimeout(function () {
       /* Quick TimeOut to show card down, then flip to card up */
@@ -379,6 +405,11 @@ function replayGame() {
       startTime()
    }, 1000);
 };
+
+function newPlayer() {
+   location.reload(true);
+}
+
 
 /* Function to start timer */
 var clearTime;
@@ -406,7 +437,7 @@ function startTimer() {
    secs = (seconds < 10) ? ('0' + seconds) : (seconds);
    // display the stopwatch 
    var time = gethours + mins + secs;
-   $('.score-section').find('.timer').html('<i class="fas fa-stopwatch"></i>&nbsp' + time);
+   $('.score-section').find('.timer').html(time);
    /* call the seconds counter after displaying the stop watch and increment seconds by +1 to keep it counting */
    seconds++;
    /* call the setTimeout( ) to keep the timer alive ! */
@@ -426,14 +457,7 @@ function stopTimer() {
    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
       /* display the full time before reseting the stop watch */
       var time = gethours + mins + secs;
-      $('.score-section').find('.timer').html('<i class="fas fa-stopwatch"></i> ' + time);
-      /*Add the time,moves and star rating to the congratulation modal only after game is complete*/
-      //  var StarsModalElem=$('.modal-element').eq(2);
-      //  var MovesModalElem=$('.modal-element').eq(1);
-      //  var TimerModalElem=$('.modal-element').eq(0);
-      //  $('.stars').clone().appendTo(StarsModalElem);
-      //  $('.moves').clone().appendTo(MovesModalElem);
-      //  $('.timer').clone().appendTo(TimerModalElem);
+      $('.score-section').find('.timer').html(time);
       /* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */
       clearTimeout(clearTime);
    }
@@ -441,7 +465,10 @@ function stopTimer() {
 //Timer code end
 
 
-/****** Exit Message ******/
+/* Exit Message */
 $(window).bind('beforeunload', function () {
    return 'Are you sure you want to leave?';
 });
+
+
+//TO DO 

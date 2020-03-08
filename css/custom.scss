@@ -2,7 +2,7 @@
 
 $teal: rgb(56, 204, 204);
 $lt-teal: #3dd9d9;
-$purple: #7d07f2;
+$purple: hsl(270, 94%, 49%);
 $yellow: #fc0;
 $white: #f2f2f2;
 $grey: #909095;
@@ -38,9 +38,18 @@ $black: #0b0c10;
   background-color: $teal;
 }
 
+.bg-lt-teal {
+  background-color: $lt-teal;
+}
+
 .bg-purple {
   background-color: $purple;
 }
+
+.bg-dark {
+  background-color: #100e17 !important;
+}
+
 
 ///////////button styles/////////////////
 .btn-purple {
