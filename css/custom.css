@@ -1,76 +1,62 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers|Open+Sans+Condensed:300&display=swap");
-.text-white {
-  color: #f2f2f2 !important;
+.text-shade-dark {
+  color: #403b3b;
 }
 
-.text-teal {
-  color: #38cccc !important;
+.text-color-1 {
+  color: #007c89;
 }
 
-.text-purple {
-  color: #7d07f2 !important;
-}
-
-.text-yellow {
-  color: #fc0 !important;
+.text-color-2 {
+  color: #edc53f;
 }
 
 .bg-lt-white {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.bg-yellow {
-  background-color: #fc0;
+.bg-color-2 {
+  background-color: #edc53f;
 }
 
-.bg-teal {
-  background-color: #38cccc;
+.bg-color-1 {
+  background-color: #007c89;
 }
 
-.bg-lt-teal {
-  background-color: #3dd9d9;
+.bg-color-1-lt {
+  background-color: #008796;
 }
 
-.bg-purple {
-  background-color: #7d07f2;
+.bg-light {
+  background-color: #efeeea !important !important;
 }
 
-.bg-dark {
-  background-color: #100e17 !important;
-}
-
-.btn-purple {
+.btn-color-1 {
   font-family: "Open Sans Condensed", sans-serif !important;
-  background-color: #7d07f2 !important;
+  background-color: #007c89 !important;
   border: 0;
-  color: #f2f2f2;
+  color: #f6f6f4;
   text-transform: uppercase;
 }
 
-.btn-purple:hover {
+.btn-color-1:hover {
   font-family: "Open Sans Condensed", sans-serif !important;
-  background-color: rgba(125, 7, 242, 0.75) !important;
+  background-color: rgba(1, 124, 137, 0.75) !important;
   border: 0;
-  color: #f2f2f2 !important;
-}
-
-.btn-outline-purple {
-  color: #7d07f2;
-  font-family: "Open Sans Condensed", sans-serif;
-  border-color: #7d07f2;
+  color: #f6f6f4 !important;
 }
 
 .outline-teal {
-  color: #7d07f2;
+  color: #007c89;
   font-family: "Open Sans Condensed", sans-serif;
-  border: 1px solid #38cccc !important;
+  border: 1px solid #007c89 !important;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #f6f6f4;
 }
 
 a:hover {
   font-family: "Open Sans Condensed", sans-serif;
-  color: #38cccc !important;
+  color: rgba(1, 124, 137, 0.75) !important;
   text-decoration: underline;
 }
 
@@ -155,21 +141,10 @@ p {
 }
 
 .card {
+  width: 8.5rem;
+  height: 5rem;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-.bigfont {
-  font-family: "Open Sans Condensed", sans-serif !important;
-  font-size: 1.5rem !important;
-  font-weight: bold !important;
-}
-
-.lead {
-  font-size: 1.5rem !important;
-  font-weight: bold;
-}
-
-.card {
   font-size: 3em;
   text-align: center;
   line-height: 4.5rem;
@@ -186,15 +161,26 @@ p {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+      supported by Chrome and Opera */
+}
+
+.bigfont {
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.lead {
+  font-size: 1.5rem !important;
+  font-weight: bold;
 }
 
 .card-down {
-  color: #f2f2f2;
-  background-color: #3dd9d9;
-  font-family: "Bangers", sans-serif;
+  color: rgba(64, 59, 59, 0.1) !important;
+  background-color: #008796;
+  font-family: 'Bangers', sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 5px solid #3dd9d9 !important;
+  border: 5px solid #008796 !important;
   box-sizing: border-box;
 }
 
@@ -207,7 +193,7 @@ p {
   line-height: 2.5rem;
   margin: auto;
   background-color: #eee;
-  color: #000;
+  color: #403b3b !important;
   border: 5px solid #eee !important;
 }
 
@@ -216,40 +202,40 @@ p {
   align-items: center;
   justify-content: center;
   align-items: center;
-  font-size: 1.25em;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.25em !important;
+  font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   line-height: 1.3rem;
   margin: auto;
 }
 
 .card-hover {
-  border: 5px solid rgba(125, 7, 242, 0.75) !important;
+  border: 5px solid rgba(0, 124, 137, 0.75) !important;
 }
 
 .card-select {
-  border: 5px solid rgba(125, 7, 242, 0.75) !important;
+  border: 5px solid rgba(0, 124, 137, 0.75) !important;
 }
 
 .btn-info-submit {
-  color: #ffdc00;
-  font-family: "Open Sans Condensed", sans-serif;
+  color: #edc53f;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .btn-info-submit:hover {
-  color: #fff;
+  color: #f6f6f4;
 }
 
 .card-click {
-  color: rgba(125, 7, 242, 0.75);
-  border: 5px solid rgba(125, 7, 242, 0.75) !important;
-  background-color: #efe0fe;
+  color: rgba(0, 124, 137, 0.75) !important;
+  border: 5px solid rgba(0, 124, 137, 0.75) !important;
+  background-color: rgba(0, 124, 137, 0.1);
 }
 
 .card-matched {
-  background-color: #ccc;
-  color: #999;
-  border: 5px solid #ccc !important;
+  background-color: #dbd9d2;
+  color: #8c8c8c;
+  border: 5px solid #dbd9d2 !important;
   cursor: default;
 }
 
@@ -257,7 +243,6 @@ p {
   width: 8.5rem;
   height: 5rem;
   border-radius: 5px;
-  border: none !important;
 }
 
 @media only screen and (min-width: 48em) {

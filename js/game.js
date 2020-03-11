@@ -249,8 +249,8 @@ function loadGame() {
    /* Add the cards to the webpage */
    for (i = 0; i < gameCards; i++) {
       /* Create the image elements*/
-      $('#deck1').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down" data-deck="1" data-target="' + deck1[i] + '" data-icon="' + deck[i].name + '">?</div></div>');
-      $('#deck2').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down d-flex justify-content-center" data-deck="2" data-target="' + deck2[i] + '" data-icon="' + deck[i].name + '">?</div></div>');
+      $('#deck1').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down d-flex justify-content-center align-items-center" data-deck="1" data-target="' + deck1[i] + '" data-icon="' + deck[i].name + '"><i class="fas fa-icons"></i></div></div>');
+      $('#deck2').append('<div class="col-md-4 col-6 p-1 d-flex justify-content-center"><div class="card card-down d-flex justify-content-center align-items-center" data-deck="2" data-target="' + deck2[i] + '" data-icon="' + deck[i].name + '"><i class="fas fa-icons"></i></div></div>');
    }
 }
 
@@ -466,9 +466,9 @@ function stopTimer() {
 
 
 /* Exit Message */
-$(window).bind('beforeunload', function () {
+/* $(window).bind('beforeunload', function () {
    return 'Are you sure you want to leave?';
 });
-
+ */
 
 //TO DO 

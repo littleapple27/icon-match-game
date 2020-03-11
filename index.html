@@ -17,116 +17,17 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/custom.min.css">
 	<title>The Unambiguous Icon Project: A Case for Universal Icon Meanings</title>
-	<style>
-		.card {
-			cursor: pointer;
-		}
 
-		.bigfont {
-			font-family: 'Open Sans Condensed', sans-serif !important;
-			font-size: 1.5rem !important;
-			font-weight: bold !important;
-		}
-
-		.lead {
-			font-size: 1.5rem !important;
-			font-weight: bold;
-		}
-
-		.card {
-			font-size: 3em;
-			text-align: center;
-			line-height: 4.5rem;
-			margin: auto;
-			-webkit-touch-callout: none;
-			/* iOS Safari */
-			-webkit-user-select: none;
-			/* Safari */
-			-khtml-user-select: none;
-			/* Konqueror HTML */
-			-moz-user-select: none;
-			/* Firefox */
-			-ms-user-select: none;
-			/* Internet Explorer/Edge */
-			user-select: none;
-			/* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-		}
-
-		.card-down {
-			color: #f2f2f2;
-			background-color: #3DD9D9;
-			font-family: 'Bangers', sans-serif;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			border: 5px solid #3DD9D9 !important;
-			box-sizing: border-box;
-		}
-
-		.card-up {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 2em;
-			text-align: center;
-			line-height: 2.5rem;
-			margin: auto;
-			background-color: #eee;
-			color: #000;
-			border: 5px solid #eee !important;
-		}
-
-		#deck2 .card-up {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			align-items: center;
-			font-size: 1.25em !important;
-			font-family: 'Open Sans Condensed', sans-serif;
-			text-align: center;
-			line-height: 1.3rem;
-			margin: auto;
-		}
-
-		.card-hover {
-			border: 5px solid rgba(125, 7, 242, 0.75) !important;
-		}
-
-		.card-select {
-			border: 5px solid rgba(125, 7, 242, 0.75) !important;
-		}
-
-		.btn-info-submit {
-			color: #FFDC00;
-			font-family: 'Open Sans Condensed', sans-serif;
-		}
-
-		.btn-info-submit:hover {
-			color: #FFF;
-		}
-
-		.card-click {
-			color: rgba(125, 7, 242, 0.75);
-			border: 5px solid rgba(125, 7, 242, 0.75) !important;
-			background-color: #EFE0FE;
-		}
-
-		.card-matched {
-			background-color: #ccc;
-			color: #999;
-			border: 5px solid #ccc !important;
-			cursor: default;
-		}
-	</style>
 </head>
 
-<body class="bg-dark">
+<body class="bg-light">
 
 	<!----Demographic Form Pop-Up Modal on Page Load---->
 	<section id="demoModal" class="modal fade" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog">
 			<div class="modal-content bg-light text">
 				<div class="modal-header">
-					<h5 class="modal-title bigfont">Please fill out the following information</h5>
+					<h5 class="modal-title bigfont text-color-1">Please fill out the following information</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -280,8 +181,8 @@
 							</p>
 						</div>
 						<div class="text-right">
-							<button type="submit" name="submit" value="submit"
-								class="btn btn-lg bg-purple btn-info-submit text-uppercase" id="lets-play-btn">Let's
+							<button
+								class="btn btn-lg bg-color-1 btn-info-submit text-uppercase" id="lets-play-btn">Let's
 								Play!&nbsp;&nbsp;<i class="fas fa-angle-double-right"></i></button>
 						</div>
 					</form>
@@ -291,9 +192,9 @@
 	</section>
 
 
-	<section class="container py-4 mb-0">
+	<section class="container-fluid py-4 mb-0 bg-color-1 text-white">
 
-		<h1 class="display-4 text-shadow text-center text-yellow">Icon <i class="fas fa-arrow-right"></i> Word Match
+		<h1 class="display-4 text-shadow text-center text-color-2">Icon <i class="fas fa-arrow-right"></i> Word Match
 			Game</h1>
 		<p class="text-white lead text-center">
 			Click on an icon and then on a word that matches the meaning or function of the icon.</p>
@@ -303,13 +204,13 @@
 	</section>
 
 	<!---Start button, score, clicks and timer section-->
-	<section class="container bg-light shadow mb-2 score-section rounded">
+	<section class="container mb-2 pt-5 score-section rounded">
 		<div
 			class="rounded-top py-2 text-center d-flex flex-column-reverse flex-sm-row align-content-sm-stretch justify-content-around">
 
 
 			<div class="m-1 align-content-sm-stretch flex-fill">
-				<button class="btn btn-md btn-purple start-btn btn-block bigfont text-yellow">Start
+				<button class="btn btn-md btn-color-1 start-btn btn-block bigfont text-color-2">Start
 					Game<i class="ml-3 fa fa-play"></i></button>
 			</div>
 
@@ -318,18 +219,18 @@
 
 			<div
 				class="outline-teal m-1 p-1  align-content-sm-stretch flex-fill d-flex align-items-center justify-content-center bigfont">
-				<p class="text-yellow mb-0 bigfont">
-					<i class="fa fa-star mr-2"></i><span class="score text-purple">00000</span></p>
+				<p class="text-color-2 mb-0 bigfont">
+					<i class="fa fa-star mr-2"></i><span class="score text-color-1">00000</span></p>
 			</div>
 			<div
 				class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center bigfont">
-				<p class="text-teal  mb-0 bigfont"><i class="fas fa-chess mr-2"></i>&nbsp;
-					<span class="moves text-purple">0</span></p>
+				<p class="text-color-2 mb-0 bigfont"><i class="fas fa-chess mr-2"></i>&nbsp;
+					<span class="moves text-color-1">0</span></p>
 			</div>
 			<div
 				class="outline-teal flex-fill align-content-sm-stretch m-1 p-1 d-flex align-items-center justify-content-center bigfont">
-				<p class="mb-0 bigfont text-purple">
-					<i class="fas fa-stopwatch mr-2"></i><span class="timer">00:00:00</span></p>
+				<p class="mb-0 bigfont text-color-2">
+					<i class="fas fa-stopwatch mr-2"></i><span class="timer text-color-1">00:00:00</span></p>
 			</div>
 
 
@@ -341,7 +242,7 @@
 		<!-- <form id="msform" method="post" action=""> ***removed: ask NC question about form****
 			<fieldset class="fieldset px-2"> -->
 
-		<div class="row bg-teal rounded-bottom p-1">
+		<div class="row rounded-bottom p-1">
 			<!---Inner Row--->
 			<div class="col-6 mb-1 rounded-left" id="icon-bank">
 				<!---Outer Column--->
@@ -368,12 +269,16 @@
 	</section>
 
 	<!-- End of Game Modal -->
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#endGameModal">
+  Launch demo modal
+</button>
 	<div class="modal fade" id="endGameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content bg-light">
 				<div class="text-center pt-3">
-					<h2 class="modal-title text-purple" id="exampleModalLabel">Congratulations <i
+					<h2 class="modal-title text-color-1" id="exampleModalLabel">Congratulations <i
 							class="fa fa-arrow-right"></i> You Win!</h2>
 					<p class="lead">You matched all of the icons!</p>
 					<!--- Remove button on final --->
@@ -384,51 +289,57 @@
 				<div class="modal-body">
 
 
-					<div class="bg-white text-purple border mx-5 py-1">
+					<div class="bg-white text-color-1 border mx-5 py-3">
 						<div class="modal-element text-center bigfont mb-2">
-							<i class="mr-2 fas fa-stopwatch"></i><span>Time :</span>
+							<span class="text-color-2"><i class="mr-2 fas fa-stopwatch"></i></span><span>Time :</span>
 						</div>
 						<div class="modal-element text-center bigfont mb-2">
-							<span class="text-teal"><i class="mr-2 fas fa-chess"></i></span><span>Moves :</span>
+							<span class="text-color-2"><i class="mr-2 fas fa-chess"></i></span><span>Moves :</span>
 						</div>
 						<div class="modal-element text-center bigfont mb-2">
-							<span class="text-yellow"><i class="mr-2 fas fa-star"></i></span><span> Score :</span>
+							<span class="text-color-2"><i class="mr-2 fas fa-star"></i></span><span> Score :</span>
 						</div>
 					</div>
 
 				</div>
 				<div class="bg-light">
 					<div class="py-4 d-flex flex-row justify-content-around">
-						<button class="btn btn-md bg-purple btn-info-submit text-uppercase">Leaderboard&nbsp;&nbsp;<i
+						<button class="btn btn-md bg-color-1 btn-info-submit text-uppercase">Leaderboard&nbsp;&nbsp;<i
 								class="fas fa-trophy"></i></button>
-						<button class="btn btn-md bg-purple btn-info-submit text-uppercase playAgain-btn">Play
+						<button class="btn btn-md bg-color-1 btn-info-submit text-uppercase playAgain-btn">Play
 							Again&nbsp;&nbsp;<i class="fas fa-gamepad"></i></button>
-						<button class="btn btn-md bg-purple btn-info-submit text-uppercase newPlayer-btn">New
+						<button class="btn btn-md bg-color-1 btn-info-submit text-uppercase newPlayer-btn">New
 							Player&nbsp;&nbsp;<i class="fas fa-user"></i></button>
 					</div>
 					<!--End of button flex group-->
-					<div class="py-2 text-center bg-purple text-white text-uppercase">Thank you for playing!</div>
+					<div class="py-2 text-center bg-color-1 text-white text-uppercase">Thank you for playing!</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<footer class="p-4 text-center text-white text-small">
+	<footer class="col-lg-8 col-md-10 col-12 mx-auto p-4 text-center text-shade-dark text-small">
 		<div>Disclaimer: The data collected by the page could be published in aggregate form to help understand the use
 			of icons to improve end-user comprehension and usability in web-based UI development.</div>
 
-		<div>&copy; 2019 <a href="mailto:amlegleiter@mail.fhsu.edu" class="text-teal"> amlegleiter@mail.fhsu.edu<i
-					class="ml-2 fas fa-envelope"></i></a><a class="text-teal"
+		<div class="mt-2">&copy; 2019 <a href="mailto:amlegleiter@mail.fhsu.edu" class="text-color-1"> amlegleiter@mail.fhsu.edu<i
+					class="ml-2 fas fa-envelope"></i></a><a class="text-color-1"
 				href="https://github.com/littleapple27/case-for-universal-meanings" target="_blank"><i
-					class="fab fa-github ml-2"></i></a><a class="text-teal"
+					class="fab fa-github ml-2"></i></a><a class="text-color-1"
 				href="https://www.researchgate.net/publication/339004734_Flat-Design_Icon_Sets_a_Case_for_Universal_Meanings"><i
 					class="fab fa-researchgate ml-2"></i></a></div>
 	</footer>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>	
 	<script src="js/shuffle.js"></script>
 	<script src="js/game.js"></script>
+	<script src="js/game-cookie.js"></script>
+
+
+
+
 </body>
 
 </html>

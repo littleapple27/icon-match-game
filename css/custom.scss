@@ -1,28 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers|Open+Sans+Condensed:300&display=swap");
 
-$teal: rgb(56, 204, 204);
-$lt-teal: #3dd9d9;
-$purple: hsl(270, 94%, 49%);
-$yellow: #fc0;
-$white: #f2f2f2;
-$grey: #909095;
+$color-1:rgb(0, 124, 137);
+$color-1rgba75:rgba(0, 124, 137,0.75);
+$color-1-lt: #008796;
+$color-2: #edc53f;
+$light: #efeeea!important;
+$white: #f6f6f4;
+$grey: #8c8c8c;
 $black: #0b0c10;
+$shade-dark: #403b3b;
 
 //// //////text styles////////////////////////
-.text-white {
-  color: $white !important;
+.text-shade-dark {
+  color: $shade-dark;
 }
 
-.text-teal {
-  color: $teal !important;
+.text-color-1 {
+  color: $color-1;
 }
 
-.text-purple {
-  color: $purple !important;
-}
-
-.text-yellow {
-  color: $yellow !important;
+.text-color-2 {
+  color: $color-2;
 }
 
 ///////////background styles/////////////////
@@ -30,53 +28,44 @@ $black: #0b0c10;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.bg-yellow {
-  background-color: $yellow;
+.bg-color-2 {
+  background-color: $color-2;
 }
 
-.bg-teal {
-  background-color: $teal;
+.bg-color-1 {
+  background-color: $color-1;
 }
 
-.bg-lt-teal {
-  background-color: $lt-teal;
+.bg-color-1-lt {
+  background-color: $color-1-lt;
 }
 
-.bg-purple {
-  background-color: $purple;
-}
-
-.bg-dark {
-  background-color: #100e17 !important;
+.bg-light {
+  background-color: $light!important;
 }
 
 
 ///////////button styles/////////////////
-.btn-purple {
+.btn-color-1 {
   font-family: "Open Sans Condensed", sans-serif !important;
-  background-color: $purple !important;
+  background-color: $color-1 !important;
   border: 0;
   color: $white;
   text-transform: uppercase;
 }
 
-.btn-purple:hover {
+.btn-color-1:hover {
   font-family: "Open Sans Condensed", sans-serif !important;
-  background-color: rgba(125, 7, 242, 0.75) !important;
+  background-color: rgba(1, 124, 137, .75) !important;
   border: 0;
   color: $white !important;
 }
 
-.btn-outline-purple {
-  color: $purple;
-  font-family: "Open Sans Condensed", sans-serif;
-  border-color: $purple;
-}
 
 .outline-teal {
-  color: $purple;
+  color: $color-1;
   font-family: "Open Sans Condensed", sans-serif;
-  border: 1px solid $teal !important;
+  border: 1px solid $color-1 !important;
   border-radius: 5px;
   background-color: $white;
 }
@@ -84,7 +73,7 @@ $black: #0b0c10;
 /////// <a> hover style /////////
 a:hover {
   font-family: "Open Sans Condensed", sans-serif;
-  color: rgba(56, 204, 204, 1) !important;
+  color: rgba(1, 124, 137, .75) !important;
   text-decoration: underline;
 }
 
@@ -156,92 +145,110 @@ p {
 }
 
 ///////////page styles/////////////////
-.card {
+		.card {
+  width: 8.5rem;
+  height: 5rem;
+  border-radius: 5px;
   cursor: pointer;
-}
-.bigfont {
-  font-family: "Open Sans Condensed", sans-serif !important;
-  font-size: 1.5rem !important;
-  font-weight: bold !important;
-}
-.lead {
-  font-size: 1.5rem !important;
-  font-weight: bold;
-}
-.card {
   font-size: 3em;
-  text-align: center;
-  line-height: 4.5rem;
-  margin: auto;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-.card-down {
-  color: #f2f2f2;
-  background-color: #3dd9d9;
-  font-family: "Bangers", sans-serif;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 5px solid #3dd9d9 !important;
-  box-sizing: border-box;
-}
-.card-up {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  text-align: center;
-  line-height: 2.5rem;
-  margin: auto;
-  background-color: #eee;
-  color: #000;
-  border: 5px solid #eee !important;
-}
-#deck2 .card-up {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.25em;
-  font-family: "Open Sans Condensed", sans-serif;
-  text-align: center;
-  line-height: 1.3rem;
-  margin: auto;
-}
-.card-hover {
-  border: 5px solid rgba(125, 7, 242, 0.75) !important;
-}
-.card-select {
-  border: 5px solid rgba(125, 7, 242, 0.75) !important;
-}
-.btn-info-submit {
-  color: #ffdc00;
-  font-family: "Open Sans Condensed", sans-serif;
-}
-.btn-info-submit:hover {
-  color: #fff;
-}
-.card-click {
-  color: rgba(125, 7, 242, 0.75);
-  border: 5px solid rgba(125, 7, 242, 0.75) !important;
-  background-color: #efe0fe;
-}
-.card-matched {
-  background-color: #ccc;
-  color: #999;
-  border: 5px solid #ccc !important;
-  cursor: default;
-}
+			text-align: center;
+			line-height: 4.5rem;
+			margin: auto;
+			-webkit-touch-callout: none;
+			/* iOS Safari */
+			-webkit-user-select: none;
+			/* Safari */
+			-khtml-user-select: none;
+			/* Konqueror HTML */
+			-moz-user-select: none;
+			/* Firefox */
+			-ms-user-select: none;
+			/* Internet Explorer/Edge */
+			user-select: none;
+			/* Non-prefixed version, currently
+      supported by Chrome and Opera */
+  }
+
+		.bigfont {
+			font-family: 'Open Sans Condensed', sans-serif !important;
+			font-size: 1.5rem !important;
+			font-weight: bold !important;
+		}
+
+		.lead {
+			font-size: 1.5rem !important;
+			font-weight: bold;
+		}
+
+		.card-down {
+			color: rgba(64, 59, 59, 0.1)!important;
+			background-color: $color-1-lt;
+			font-family: 'Bangers', sans-serif;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border: 5px solid $color-1-lt !important;
+			box-sizing: border-box;
+		}
+
+		.card-up {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 2em;
+			text-align: center;
+			line-height: 2.5rem;
+			margin: auto;
+			background-color: #eee;
+			color: $shade-dark !important;
+			border: 5px solid #eee !important;
+		}
+
+		#deck2 .card-up {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.25em !important;
+			font-family: 'Open Sans Condensed', sans-serif;
+			text-align: center;
+			line-height: 1.3rem;
+			margin: auto;
+		}
+
+		.card-hover {
+			border: 5px solid $color-1rgba75!important;
+		}
+
+		.card-select {
+			border: 5px solid $color-1rgba75!important;
+		}
+
+		.btn-info-submit {
+			color: $color-2;
+			font-family: 'Open Sans Condensed', sans-serif;
+		}
+
+		.btn-info-submit:hover {
+			color: #f6f6f4;
+		}
+
+		.card-click {
+			color: rgba(0, 124, 137, 0.75)!important;
+			border: 5px solid rgba(0, 124, 137, 0.75) !important;
+			background-color: rgba(0, 124, 137, 0.1);
+		}
+
+		.card-matched {
+			background-color: #dbd9d2;
+			color: #8c8c8c;
+			border: 5px solid #dbd9d2!important;
+			cursor: default;
+		}
+
 
 .card {
   width: 8.5rem;
   height: 5rem;
   border-radius: 5px;
-  border: none !important;
 }
 
 //Media Queries
