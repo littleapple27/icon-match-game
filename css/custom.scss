@@ -9,6 +9,7 @@ $white: #f6f6f4;
 $grey: #8c8c8c;
 $black: #0b0c10;
 $shade-dark: #403b3b;
+$shade-md: #dbd9d2;
 
 //// //////text styles////////////////////////
 .text-shade-dark {
@@ -44,13 +45,17 @@ $shade-dark: #403b3b;
   background-color: $light!important;
 }
 
+.bg-shade-md {
+  backround-color: $shade-md;
+}
+
 
 ///////////button styles/////////////////
 .btn-color-1 {
   font-family: "Open Sans Condensed", sans-serif !important;
   background-color: $color-1 !important;
   border: 0;
-  color: $white;
+  color: $color-2;
   text-transform: uppercase;
 }
 
@@ -67,7 +72,7 @@ $shade-dark: #403b3b;
   font-family: "Open Sans Condensed", sans-serif;
   border: 1px solid $color-1 !important;
   border-radius: 5px;
-  background-color: $white;
+  background-color: $light;
 }
 
 /////// <a> hover style /////////
@@ -239,11 +244,10 @@ p {
 
 		.card-matched {
 			background-color: #dbd9d2;
-			color: #8c8c8c;
+			color: #8c8c8c!important;
 			border: 5px solid #dbd9d2!important;
 			cursor: default;
 		}
-
 
 .card {
   width: 8.5rem;

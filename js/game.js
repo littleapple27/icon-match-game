@@ -239,7 +239,7 @@ function loadGame() {
    deck2select = '';
    /* Shuffle the deck with 52 cards */
    deck = shuffle(deck);
-   /* Populate the 2 decks with X cards based on 20 cards level */
+   /* Populate the 2 decks with X cards based on 18 cards level */
    for (i = 0; i < gameCards; i++) {
       deck1.push(deck[i].target)
       deck2.push(deck[i].target);

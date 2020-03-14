@@ -31,11 +31,15 @@
   background-color: #efeeea !important !important;
 }
 
+.bg-shade-md {
+  backround-color: #dbd9d2;
+}
+
 .btn-color-1 {
   font-family: "Open Sans Condensed", sans-serif !important;
   background-color: #007c89 !important;
   border: 0;
-  color: #f6f6f4;
+  color: #edc53f;
   text-transform: uppercase;
 }
 
@@ -51,7 +55,7 @@
   font-family: "Open Sans Condensed", sans-serif;
   border: 1px solid #007c89 !important;
   border-radius: 5px;
-  background-color: #f6f6f4;
+  background-color: #efeeea !important;
 }
 
 a:hover {
@@ -234,7 +238,7 @@ p {
 
 .card-matched {
   background-color: #dbd9d2;
-  color: #8c8c8c;
+  color: #8c8c8c !important;
   border: 5px solid #dbd9d2 !important;
   cursor: default;
 }
