@@ -376,7 +376,7 @@ function checkEndgame() {
 		  
 		  
 		  */
-		  $.post('keaderboard.php',{data:gameData /*change this to relevant data about the game, i.e., player id, total points, elapsed time, moves*/},function(data){
+		  $.post('leaderboard.php',{data:gameData /*change this to relevant data about the game, i.e., player id, total points, elapsed time, moves*/},function(data){
 		
 	});
          $('#endGameModal').modal('show');

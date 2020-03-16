@@ -1,11 +1,11 @@
 //Assign player name based on phoenetic alphabet
-var pseudoname = ['alpha','bravo','charlie','delta','echo','foxtrot','golf','hotel','india','kilo','juliet','lima','mike','november','oscar','papa','quebec','romeo','sierra','tango','uniform','victor','whiskey','xray','yankee','zulu'];
-shuffle(pseudoname);
+var pseudonym = ['alpha','bravo','charlie','delta','echo','foxtrot','golf','hotel','india','kilo','juliet','lima','mike','november','oscar','papa','quebec','romeo','sierra','tango','uniform','victor','whiskey','xray','yankee','zulu'];
+shuffle(pseudonym);
 var timestamp = $.now();
 var gameData={
 }
-console.log(pseudoname[0] + timestamp);
-Cookies.set('playerId',pseudoname[0] + timestamp);
+console.log(pseudonym[0] + timestamp);
+Cookies.set('playerId',pseudonym[0] + timestamp);
 
 API_URL='process.php';
 $(document).on('submit','form#demoForm',function(e){
