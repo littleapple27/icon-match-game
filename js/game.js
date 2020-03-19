@@ -5,7 +5,7 @@ $(window).on('load', function () {
 });
 
 /* Set value to 18 cards */
-var gameCards = 18;
+var gameCards = 1;
 var gameStarted = false;
 
 /* This is the array that contains the icon deck (32 icons) */
@@ -265,24 +265,27 @@ $(document).on('mouseout', '.card', function () {
 
 /* When the user clicks on start game the cards flip over and the timer starts */
 function startGame() {
+	gameData.gameId=$.now();
+	gameData.moves=[];
    gameStarted = true;
    startTimer();
+   saveData();
    $('.start-btn').html('<i class="mr-2 fa fa-repeat"></i>Restart').removeClass("start-btn").addClass("restart-btn").attr("onclick", "restartGame()");
 };
 
-function npStartGame() {
-   gameStarted = true;
-   startTimer();
-   $('.start-btn').html('<i class="mr-2 fa fa-repeat"></i>Restart').removeClass("start-btn").addClass("restart-btn").attr("onclick", "restartGame()");
-};
-
-$(document).on('click', '.card', function () {
+$(document).on('click', '.card', function(){
    if (!gameStarted || $(this).hasClass('card-matched')) return;
+   var move={
+	   time:$.now(),
+	   elapsed:$('.score-section').find('.timer').text()
+   }
    if ($(this).attr('data-deck') == 1) {
       // click on deck1 
       $('#deck1 .card').removeClass('card-click');
       deck1select = $(this).attr('data-target');
       $(this).removeClass('card-click').addClass('card-click');
+	  move.deck1select=deck1select;
+	  move.deck2select=deck2select;
       if (deck2select.length > 0) {
          checkMatch();
       }
@@ -290,17 +293,24 @@ $(document).on('click', '.card', function () {
       // click on deck2 
       $('#deck2 .card').removeClass('card-click');
       deck2select = $(this).attr('data-target');
+	  move.deck1select=deck1select;
+	  move.deck2select=deck2select;
       $(this).removeClass('card-click').addClass('card-click');
       if (deck1select.length > 0) {
          checkMatch();
       }
    }
+   move.matched=deckMatched.length;
+   move.moves=numMoves;
+   move.score=totScore;
+   gameData.moves.push(move);
+   saveData();
    console.log($(this));
    return;
 });
 
 /*** Game Start Button On Click ***/
-$(document).on('click', '.start-btn', function () {
+$(document).on('click', '.start-btn', function (){
    console.log('check for new player');
    startGame();
    $('.card').each(function () {
@@ -360,7 +370,21 @@ function checkEndgame() {
    setTimeout(function () {
       /*Display congratulations message */
       if (deck1.length == deckMatched.length) {
-         $('#endGameModal').modal('show');
+		  
+		  /*
+		  POST username,total moves, elapsed time to a leaderboard.php
+		  */
+       var leaderData={}
+       leaderData.playerID=Cookies.get('playerId');
+       leaderData.totalMoves=numMoves;
+       leaderData.totalScore=totScore;
+       leaderData.elapsedTime=$('.timer').html();
+		  $.post('leaderboard.php',{data:leaderData /*change this to relevant data about the game, i.e., player id, total points, elapsed time, moves*/},function(data){
+           console.log('successful');
+           $('#endGameModal').modal('show');
+		
+	});
+         
       }
    }, 1000);
 
@@ -379,19 +403,24 @@ function checkEndgame() {
 function restartGame() {
    loadGame();
    gameStarted = true;
+   stopTimer();
    /* Reset score section variables to 0 */
-   seconds = 0;
-   minutes = 0;
-   hours = 0;
    totScore = 0;
    numMoves = 0;
    $('.score-section').find('.timer').html('00:00:00');
    $('.score-section').find('.score').html('00000');
    $('.score-section').find('.moves').html('0');
+	gameData.gameId=$.now();
+	gameData.moves=[];
+	saveData();
    /* Remove the cloned score, timer, and moves span to prevent duplicates */
    $('.cloned').remove();
    /* setTimeOut to show card down, then flip to show card up */
    setTimeout(function () {
+      milliseconds = 0;
+      seconds = 0;
+      minutes = 0;
+      startTimer();
       /* Quick TimeOut to show card down, then flip to card up */
       $('.card').each(function () {
          if ($(this).attr('data-deck') == 1) $(this).html('<i class="' + $(this).attr('data-icon') + '"></i>');
@@ -400,63 +429,59 @@ function restartGame() {
       $('.card-down').addClass('card-up').removeClass('.card-down');
       $('.card-down').addClass('card-up').removeClass('.card-down');
    }, 1000);
-   /* Allows for the time to start correctly */
-   setTimeout(function () {
-      startTime()
-   }, 1000);
 };
 
 function newPlayer() {
-   location.reload(true);
+   window.location.href="index.html";
 }
 
 
 /* Function to start timer */
 var clearTime;
-var seconds = 0,
-   minutes = 0,
-   hours = 0;
+var milliseconds = 0,
+   seconds = 0,
+   minutes = 0;
 var clearState;
-var secs, mins, gethours;
+var mills, secs, mins;
 //Timer start function  
 function startTimer() {
-   /* check if seconds is equal to 60 and add a +1 to minutes, and set seconds to 0 */
+   /* check if milliseconds is equal to 60 and add a +1 to seconds, and set milliseconds to 0 */
+   if (milliseconds >= 9)  {
+      milliseconds = 0
+      seconds += 1
+   }
+   /* you use the javascript tenary operator to format how the seconds should look and add 0 to seconds if less than 10 */
+   secs = (seconds < 10) ? ('0' + seconds) : (seconds);
+   /* check if seconds is equal to 60 and add a +1 to minutes set seconds to 0 */
    if (seconds === 60) {
       seconds = 0;
-      minutes = minutes + 1;
+      minutes += 1;
    }
    /* you use the javascript tenary operator to format how the minutes should look and add 0 to minutes if less than 10 */
    mins = (minutes < 10) ? ('0' + minutes + ':') : (minutes + ':');
-   /* check if minutes is equal to 60 and add a +1 to hours set minutes to 0 */
-   if (minutes === 60) {
-      minutes = 0;
-      hours = hours + 1;
-   }
-   /* you use the javascript tenary operator to format how the hours should look and add 0 to hours if less than 10 */
-   gethours = (hours < 10) ? ('0' + hours + ':') : (hours + ':');
-   secs = (seconds < 10) ? ('0' + seconds) : (seconds);
+   mills = (milliseconds < 10) ? ('.' + milliseconds) : ('.' + milliseconds);
    // display the stopwatch 
-   var time = gethours + mins + secs;
+   var time = mins + secs + mills;
    $('.score-section').find('.timer').html(time);
-   /* call the seconds counter after displaying the stop watch and increment seconds by +1 to keep it counting */
-   seconds++;
+   /* call the milliseconds counter after displaying the stop watch and increment milliseconds by +1 to keep it counting */
+   milliseconds++;
    /* call the setTimeout( ) to keep the timer alive ! */
-   clearTime = setTimeout("startTimer()", 1000);
+   clearTime = setTimeout("startTimer()", 100);
 }
 // Function used to start the timer
-function startTime() {
-   /* check if seconds, minutes, and hours are equal to zero and start the timer*/
-   if (seconds == 0 && minutes == 0 && hours == 0) {
-      startTimer();
-   }
-}
+// function startTime() {
+//    /* check if milliseconds, seconds, and minutes are equal to zero and start the timer*/
+//    if (milliseconds == 0 && seconds == 0 && minutes == 0) {
+//       startTimer();
+//    }
+// }
 
 /* Function to stop timer */
 function stopTimer() {
-   /* check if seconds, minutes and hours are not equal to 0 */
-   if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+   /* check if milliseconds, seconds and minutes are not equal to 0 */
+   if (milliseconds !== 0 || seconds !== 0 || minutes !== 0) {
       /* display the full time before reseting the stop watch */
-      var time = gethours + mins + secs;
+      var time = mins + secs + mills;
       $('.score-section').find('.timer').html(time);
       /* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */
       clearTimeout(clearTime);
