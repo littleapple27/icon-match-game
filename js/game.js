@@ -5,7 +5,7 @@ $(window).on('load', function () {
 });
 
 /* Set value to 18 cards */
-var gameCards = 1;
+var gameCards = 18;
 var gameStarted = false;
 
 /* This is the array that contains the icon deck (32 icons) */
