@@ -265,27 +265,27 @@ $(document).on('mouseout', '.card', function () {
 
 /* When the user clicks on start game the cards flip over and the timer starts */
 function startGame() {
-	gameData.gameId=$.now();
-	gameData.moves=[];
+   gameData.gameId = $.now();
+   gameData.moves = [];
    gameStarted = true;
    startTimer();
    saveData();
    $('.start-btn').html('<i class="mr-2 fa fa-repeat"></i>Restart').removeClass("start-btn").addClass("restart-btn").attr("onclick", "restartGame()");
 };
 
-$(document).on('click', '.card', function(){
+$(document).on('click', '.card', function () {
    if (!gameStarted || $(this).hasClass('card-matched')) return;
-   var move={
-	   time:$.now(),
-	   elapsed:$('.score-section').find('.timer').text()
+   var move = {
+      time: $.now(),
+      elapsed: $('.score-section').find('.timer').text()
    }
    if ($(this).attr('data-deck') == 1) {
       // click on deck1 
       $('#deck1 .card').removeClass('card-click');
       deck1select = $(this).attr('data-target');
       $(this).removeClass('card-click').addClass('card-click');
-	  move.deck1select=deck1select;
-	  move.deck2select=deck2select;
+      move.deck1select = deck1select;
+      move.deck2select = deck2select;
       if (deck2select.length > 0) {
          checkMatch();
       }
@@ -293,16 +293,16 @@ $(document).on('click', '.card', function(){
       // click on deck2 
       $('#deck2 .card').removeClass('card-click');
       deck2select = $(this).attr('data-target');
-	  move.deck1select=deck1select;
-	  move.deck2select=deck2select;
+      move.deck1select = deck1select;
+      move.deck2select = deck2select;
       $(this).removeClass('card-click').addClass('card-click');
       if (deck1select.length > 0) {
          checkMatch();
       }
    }
-   move.matched=deckMatched.length;
-   move.moves=numMoves;
-   move.score=totScore;
+   move.matched = deckMatched.length;
+   move.moves = numMoves;
+   move.score = totScore;
    gameData.moves.push(move);
    saveData();
    console.log($(this));
@@ -310,7 +310,7 @@ $(document).on('click', '.card', function(){
 });
 
 /*** Game Start Button On Click ***/
-$(document).on('click', '.start-btn', function (){
+$(document).on('click', '.start-btn', function () {
    console.log('check for new player');
    startGame();
    $('.card').each(function () {
@@ -349,6 +349,8 @@ function checkMatch() {
       /* Clear the select cards */
       deck1select = '';
       deck2select = '';
+      // if( !gameStarted) return; Causing conflict here, commented out code to fix
+      //gameStarted = false;
       checkEndgame();
    } else {
       numMoves = numMoves + 1;
@@ -370,21 +372,20 @@ function checkEndgame() {
    setTimeout(function () {
       /*Display congratulations message */
       if (deck1.length == deckMatched.length) {
-		  
-		  /*
-		  POST username,total moves, elapsed time to a leaderboard.php
-		  */
-       var leaderData={}
-       leaderData.playerID=Cookies.get('playerId');
-       leaderData.totalMoves=numMoves;
-       leaderData.totalScore=totScore;
-       leaderData.elapsedTime=$('.timer').html();
-		  $.post('leaderboard.php',{data:leaderData /*change this to relevant data about the game, i.e., player id, total points, elapsed time, moves*/},function(data){
-           console.log('successful');
-           $('#endGameModal').modal('show');
-		
-	});
-         
+         if (!gameStarted) return; //No conflict here, included code. 
+         gameStarted = false;
+         var leaderData = {}
+         leaderData.playerID = Cookies.get('playerId');
+         leaderData.totalMoves = numMoves;
+         leaderData.totalScore = totScore;
+         leaderData.elapsedTime = $('.timer').html();
+         $.post('leaderboard.php', {
+            data: leaderData
+         }, function (data) {
+            console.log('successful');
+            $('#endGameModal').modal('show');
+
+         });
       }
    }, 1000);
 
@@ -410,9 +411,9 @@ function restartGame() {
    $('.score-section').find('.timer').html('00:00:00');
    $('.score-section').find('.score').html('00000');
    $('.score-section').find('.moves').html('0');
-	gameData.gameId=$.now();
-	gameData.moves=[];
-	saveData();
+   gameData.gameId = $.now();
+   gameData.moves = [];
+   saveData();
    /* Remove the cloned score, timer, and moves span to prevent duplicates */
    $('.cloned').remove();
    /* setTimeOut to show card down, then flip to show card up */
@@ -432,7 +433,7 @@ function restartGame() {
 };
 
 function newPlayer() {
-   window.location.href="index.html";
+   window.location.href = "index.html";
 }
 
 
@@ -446,7 +447,7 @@ var mills, secs, mins;
 //Timer start function  
 function startTimer() {
    /* check if milliseconds is equal to 60 and add a +1 to seconds, and set milliseconds to 0 */
-   if (milliseconds >= 9)  {
+   if (milliseconds >= 9) {
       milliseconds = 0
       seconds += 1
    }
@@ -468,13 +469,7 @@ function startTimer() {
    /* call the setTimeout( ) to keep the timer alive ! */
    clearTime = setTimeout("startTimer()", 100);
 }
-// Function used to start the timer
-// function startTime() {
-//    /* check if milliseconds, seconds, and minutes are equal to zero and start the timer*/
-//    if (milliseconds == 0 && seconds == 0 && minutes == 0) {
-//       startTimer();
-//    }
-// }
+
 
 /* Function to stop timer */
 function stopTimer() {
@@ -495,5 +490,3 @@ function stopTimer() {
    return 'Are you sure you want to leave?';
 });
  */
-
-//TO DO 

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers|Open+Sans+Condensed:300&display=swap");
 
-$color-1:rgb(0, 124, 137);
+$color-1:#007c89;
 $color-1rgba75:rgba(0, 124, 137,0.75);
 $color-1-lt: #008796;
 $color-2: #edc53f;
@@ -198,7 +198,7 @@ p {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-size: 2em;
+			font-size: 2rem;
 			text-align: center;
 			line-height: 2.5rem;
 			margin: auto;
@@ -212,7 +212,9 @@ p {
 			align-items: center;
 			justify-content: center;
 			align-items: center;
-			font-size: 1.25em !important;
+			font-size: 1.25rem !important;
+      overflow-wrap: break-word;
+      hyphens: auto;
 			font-family: 'Open Sans Condensed', sans-serif;
 			text-align: center;
 			line-height: 1.3rem;
@@ -292,18 +294,15 @@ p {
 
 // Large devices (desktops, 62em and up)
 @media only screen and (min-width: 768px) {
-  html,
-  body,
-  p {
-    font-size: 16px !important;
+    #deck2 .card-up {
+    font-size: 1.25rem;
   }
 }
 
+
 // Extra large devices (large desktops, 75em and up)
 @media (min-width: 75em) {
-  html,
-  body,
-  p {
-    font-size: 18px !important;
+  #deck2 .card-up {
+    font-size: 1.25rem;
   }
 }

@@ -192,7 +192,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
+  font-size: 2rem;
   text-align: center;
   line-height: 2.5rem;
   margin: auto;
@@ -206,7 +206,9 @@ p {
   align-items: center;
   justify-content: center;
   align-items: center;
-  font-size: 1.25em !important;
+  font-size: 1.25rem !important;
+  overflow-wrap: break-word;
+  hyphens: auto;
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   line-height: 1.3rem;
@@ -283,17 +285,13 @@ p {
 }
 
 @media only screen and (min-width: 768px) {
-  html,
-  body,
-  p {
-    font-size: 16px !important;
+  #deck2 .card-up {
+    font-size: 1.25rem;
   }
 }
 
 @media (min-width: 75em) {
-  html,
-  body,
-  p {
-    font-size: 18px !important;
+  #deck2 .card-up {
+    font-size: 1.25rem;
   }
 }
