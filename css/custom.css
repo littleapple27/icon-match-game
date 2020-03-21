@@ -209,6 +209,7 @@ p {
   font-size: 1.25rem !important;
   overflow-wrap: break-word;
   hyphens: auto;
+  -webkit-hypens: auto;
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   line-height: 1.3rem;
