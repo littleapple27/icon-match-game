@@ -1,7 +1,8 @@
 <?php 
 
 $directory = "data/";
-$players = scandir($directory);
+
+$players = array_slice(scandir($directory), 3);
 $json=[];
 $file_results = "file_results.csv";
 foreach ($players as $player){
@@ -9,11 +10,14 @@ foreach ($players as $player){
 	$json[] = json_decode($string, true);
 }
 
+$end = end($json);
+
 $fp = fopen($file_results, 'a');
-	
+
 //Loop through the array & flatten: by using this simple function when creating the CSV from an array it will  “flatten” the array out, meaning it is no longer multidimensional and all elements will be outputted onto one line.
 foreach($json as $row){
 	$result=[];
+	$row=[];
 	array_walk_recursive($row, function($item) use (&$result) {
     		$result[] = $item;
     	});
@@ -59,6 +63,7 @@ fclose($fp);
 	<pre>
     <?php
         print_r($json);
+		print_r($end);
     ?>
 </pre>
 
