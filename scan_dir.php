@@ -17,7 +17,6 @@ $fp = fopen($file_results, 'a');
 //Loop through the array & flatten: by using this simple function when creating the CSV from an array it will  “flatten” the array out, meaning it is no longer multidimensional and all elements will be outputted onto one line.
 foreach($json as $row){
 	$result=[];
-	$row=[];
 	array_walk_recursive($row, function($item) use (&$result) {
     		$result[] = $item;
     	});
