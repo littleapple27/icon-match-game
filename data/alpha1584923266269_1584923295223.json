@@ -1,0 +1,389 @@
+{
+    "playerID": "alpha1584923266269",
+    "age": "44",
+    "gender": "m",
+    "education": "doctoral",
+    "webUse": "4-8",
+    "deviceType": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/80.0.3987.149 Safari\/537.36",
+    "gameId": "1584923295223",
+    "moves": [
+        {
+            "time": "1584923305679",
+            "elapsed": "00:11.4",
+            "deck1select": "video",
+            "deck2select": "",
+            "matched": "0",
+            "moves": "0",
+            "score": "0"
+        },
+        {
+            "time": "1584923308655",
+            "elapsed": "00:14.6",
+            "deck1select": "video",
+            "deck2select": "video",
+            "matched": "1",
+            "moves": "1",
+            "score": "1000"
+        },
+        {
+            "time": "1584923311002",
+            "elapsed": "00:17.2",
+            "deck1select": "connectivity",
+            "deck2select": "",
+            "matched": "1",
+            "moves": "1",
+            "score": "1000"
+        },
+        {
+            "time": "1584923316783",
+            "elapsed": "00:23.6",
+            "deck1select": "connectivity",
+            "deck2select": "connectivity",
+            "matched": "2",
+            "moves": "2",
+            "score": "2000"
+        },
+        {
+            "time": "1584923318215",
+            "elapsed": "00:25.2",
+            "deck1select": "flash",
+            "deck2select": "",
+            "matched": "2",
+            "moves": "2",
+            "score": "2000"
+        },
+        {
+            "time": "1584923320330",
+            "elapsed": "00:27.5",
+            "deck1select": "flash",
+            "deck2select": "flash",
+            "matched": "3",
+            "moves": "3",
+            "score": "3000"
+        },
+        {
+            "time": "1584923322219",
+            "elapsed": "00:29.5",
+            "deck1select": "location marker",
+            "deck2select": "",
+            "matched": "3",
+            "moves": "3",
+            "score": "3000"
+        },
+        {
+            "time": "1584923326810",
+            "elapsed": "00:34.6",
+            "deck1select": "location marker",
+            "deck2select": "location marker",
+            "matched": "4",
+            "moves": "4",
+            "score": "4000"
+        },
+        {
+            "time": "1584923327694",
+            "elapsed": "00:35.6",
+            "deck1select": "settings",
+            "deck2select": "",
+            "matched": "4",
+            "moves": "4",
+            "score": "4000"
+        },
+        {
+            "time": "1584923332301",
+            "elapsed": "00:40.6",
+            "deck1select": "settings",
+            "deck2select": "settings",
+            "matched": "5",
+            "moves": "5",
+            "score": "5000"
+        },
+        {
+            "time": "1584923333506",
+            "elapsed": "00:42.0",
+            "deck1select": "notifications",
+            "deck2select": "",
+            "matched": "5",
+            "moves": "5",
+            "score": "5000"
+        },
+        {
+            "time": "1584923334928",
+            "elapsed": "00:43.5",
+            "deck1select": "notifications",
+            "deck2select": "notifications",
+            "matched": "6",
+            "moves": "6",
+            "score": "6000"
+        },
+        {
+            "time": "1584923335795",
+            "elapsed": "00:44.5",
+            "deck1select": "favorite",
+            "deck2select": "",
+            "matched": "6",
+            "moves": "6",
+            "score": "6000"
+        },
+        {
+            "time": "1584923342216",
+            "elapsed": "00:51.5",
+            "deck1select": "favorite",
+            "deck2select": "favorite",
+            "matched": "7",
+            "moves": "7",
+            "score": "7000"
+        },
+        {
+            "time": "1584923343309",
+            "elapsed": "00:52.7",
+            "deck1select": "delete",
+            "deck2select": "",
+            "matched": "7",
+            "moves": "7",
+            "score": "7000"
+        },
+        {
+            "time": "1584923344627",
+            "elapsed": "00:54.2",
+            "deck1select": "delete",
+            "deck2select": "delete",
+            "matched": "8",
+            "moves": "8",
+            "score": "8000"
+        },
+        {
+            "time": "1584923345543",
+            "elapsed": "00:55.2",
+            "deck1select": "directions",
+            "deck2select": "",
+            "matched": "8",
+            "moves": "8",
+            "score": "8000"
+        },
+        {
+            "time": "1584923346676",
+            "elapsed": "00:56.4",
+            "deck1select": "directions",
+            "deck2select": "directions",
+            "matched": "9",
+            "moves": "9",
+            "score": "9000"
+        },
+        {
+            "time": "1584923347561",
+            "elapsed": "00:57.4",
+            "deck1select": "sign-in",
+            "deck2select": "",
+            "matched": "9",
+            "moves": "9",
+            "score": "9000"
+        },
+        {
+            "time": "1584923352593",
+            "elapsed": "01:03.0",
+            "deck1select": "sign-in",
+            "deck2select": "",
+            "matched": "9",
+            "moves": "9",
+            "score": "9000"
+        },
+        {
+            "time": "1584923354482",
+            "elapsed": "01:05.1",
+            "deck1select": "sign-in",
+            "deck2select": "",
+            "matched": "9",
+            "moves": "9",
+            "score": "9000"
+        },
+        {
+            "time": "1584923355671",
+            "elapsed": "01:06.3",
+            "deck1select": "expand",
+            "deck2select": "",
+            "matched": "9",
+            "moves": "9",
+            "score": "9000"
+        },
+        {
+            "time": "1584923359303",
+            "elapsed": "01:10.3",
+            "deck1select": "paste",
+            "deck2select": "",
+            "matched": "9",
+            "moves": "9",
+            "score": "9000"
+        },
+        {
+            "time": "1584923362614",
+            "elapsed": "01:14.0",
+            "deck1select": "paste",
+            "deck2select": "paste",
+            "matched": "10",
+            "moves": "10",
+            "score": "10000"
+        },
+        {
+            "time": "1584923363948",
+            "elapsed": "01:15.4",
+            "deck1select": "security",
+            "deck2select": "",
+            "matched": "10",
+            "moves": "10",
+            "score": "10000"
+        },
+        {
+            "time": "1584923368320",
+            "elapsed": "01:20.3",
+            "deck1select": "security",
+            "deck2select": "security",
+            "matched": "11",
+            "moves": "11",
+            "score": "11000"
+        },
+        {
+            "time": "1584923371068",
+            "elapsed": "01:23.3",
+            "deck1select": "grip lines",
+            "deck2select": "",
+            "matched": "11",
+            "moves": "11",
+            "score": "11000"
+        },
+        {
+            "time": "1584923375368",
+            "elapsed": "01:28.0",
+            "deck1select": "grip lines",
+            "deck2select": "grip lines",
+            "matched": "12",
+            "moves": "12",
+            "score": "12000"
+        },
+        {
+            "time": "1584923377418",
+            "elapsed": "01:30.3",
+            "deck1select": "street view",
+            "deck2select": "",
+            "matched": "12",
+            "moves": "12",
+            "score": "12000"
+        },
+        {
+            "time": "1584923379306",
+            "elapsed": "01:32.3",
+            "deck1select": "street view",
+            "deck2select": "street view",
+            "matched": "13",
+            "moves": "13",
+            "score": "13000"
+        },
+        {
+            "time": "1584923381676",
+            "elapsed": "01:35.0",
+            "deck1select": "search",
+            "deck2select": "",
+            "matched": "13",
+            "moves": "13",
+            "score": "13000"
+        },
+        {
+            "time": "1584923384143",
+            "elapsed": "01:37.6",
+            "deck1select": "search",
+            "deck2select": "search",
+            "matched": "14",
+            "moves": "14",
+            "score": "14000"
+        },
+        {
+            "time": "1584923387471",
+            "elapsed": "01:41.3",
+            "deck1select": "user",
+            "deck2select": "",
+            "matched": "14",
+            "moves": "14",
+            "score": "14000"
+        },
+        {
+            "time": "1584923388331",
+            "elapsed": "01:42.2",
+            "deck1select": "user",
+            "deck2select": "sign-in",
+            "matched": "14",
+            "moves": "15",
+            "score": "13750"
+        },
+        {
+            "time": "1584923389827",
+            "elapsed": "01:43.8",
+            "deck1select": "user",
+            "deck2select": "",
+            "matched": "14",
+            "moves": "15",
+            "score": "13750"
+        },
+        {
+            "time": "1584923390642",
+            "elapsed": "01:44.7",
+            "deck1select": "user",
+            "deck2select": "user",
+            "matched": "15",
+            "moves": "16",
+            "score": "14750"
+        },
+        {
+            "time": "1584923393295",
+            "elapsed": "01:47.7",
+            "deck1select": "expand",
+            "deck2select": "",
+            "matched": "15",
+            "moves": "16",
+            "score": "14750"
+        },
+        {
+            "time": "1584923394430",
+            "elapsed": "01:49.0",
+            "deck1select": "expand",
+            "deck2select": "expand",
+            "matched": "16",
+            "moves": "17",
+            "score": "15750"
+        },
+        {
+            "time": "1584923395250",
+            "elapsed": "01:49.8",
+            "deck1select": "sign-in",
+            "deck2select": "",
+            "matched": "16",
+            "moves": "17",
+            "score": "15750"
+        },
+        {
+            "time": "1584923396013",
+            "elapsed": "01:50.6",
+            "deck1select": "sign-in",
+            "deck2select": "sign-in",
+            "matched": "17",
+            "moves": "18",
+            "score": "16750"
+        },
+        {
+            "time": "1584923396978",
+            "elapsed": "01:51.7",
+            "deck1select": "help & support",
+            "deck2select": "",
+            "matched": "17",
+            "moves": "18",
+            "score": "16750"
+        },
+        {
+            "time": "1584923397548",
+            "elapsed": "01:52.4",
+            "deck1select": "help & support",
+            "deck2select": "help & support",
+            "matched": "18",
+            "moves": "19",
+            "score": "17750"
+        }
+    ]
+}
