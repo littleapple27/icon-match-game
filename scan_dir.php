@@ -15,7 +15,6 @@ $fp = fopen($file_results, 'a');
 
 foreach($json as $row){
 	$result=[];
-	$row=$json;
 	array_walk_recursive($row, function($item) use (&$result) {
     		$result[] = $item;
     	});
@@ -61,6 +60,7 @@ fclose($fp);
 	<pre>
     <?php
         print_r($json);
+
     ?>
 </pre>
 
